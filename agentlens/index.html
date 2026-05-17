@@ -991,6 +991,13 @@
       e.preventDefault();
       var email = document.getElementById('emailInput');
       if (!email.value) return;
+
+      // Save to localStorage for email tracking
+      var key = 'agentlens_waitlist_emails';
+      var emails = JSON.parse(localStorage.getItem(key) || '[]');
+      emails.push({ email: email.value, timestamp: new Date().toISOString(), page: 'agentlens' });
+      localStorage.setItem(key, JSON.stringify(emails));
+
       document.getElementById('waitlistForm').style.display = 'none';
       document.getElementById('waitlistSuccess').style.display = 'block';
     }
