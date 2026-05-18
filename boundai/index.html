@@ -458,6 +458,13 @@ function joinWaitlist() {
   var existing = JSON.parse(localStorage.getItem(key) || '[]');
   existing.push({ email: email, timestamp: new Date().toISOString(), page: 'boundai' });
   localStorage.setItem(key, JSON.stringify(existing));
+  // Notify Dashboard for server-side counting
+  fetch('http://localhost:9090/api/waitlist/boundai', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+
   document.getElementById('waitlist-form').style.display = 'none';
   document.getElementById('success-message').style.display = 'block';
 }

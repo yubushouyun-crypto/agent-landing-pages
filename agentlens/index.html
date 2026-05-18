@@ -996,7 +996,14 @@
       var key = 'agentlens_waitlist_emails';
       var emails = JSON.parse(localStorage.getItem(key) || '[]');
       emails.push({ email: email.value, timestamp: new Date().toISOString(), page: 'agentlens' });
-      localStorage.setItem(key, JSON.stringify(emails));
+localStorage.setItem(key, JSON.stringify(existing));
+  // Notify Dashboard for server-side counting
+  fetch('http://localhost:9090/api/waitlist/agentlens', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+
 
       document.getElementById('waitlistForm').style.display = 'none';
       document.getElementById('waitlistSuccess').style.display = 'block';

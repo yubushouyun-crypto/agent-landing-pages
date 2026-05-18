@@ -296,6 +296,13 @@ var key = 'recallflow_waitlist_emails';
 var existing = JSON.parse(localStorage.getItem(key) || '[]');
 existing.push({ email: email, timestamp: new Date().toISOString(), page: 'recallflow' });
 localStorage.setItem(key, JSON.stringify(existing));
+  // Notify Dashboard for server-side counting
+  fetch('http://localhost:9090/api/waitlist/recallflow', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+
 this.style.display = 'none';
 document.getElementById('successMsg').style.display = 'block';
 });
