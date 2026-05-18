@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecallFlow - AI Meeting Intelligence That Ships Work | Meeting AI, Action Tracking, Documentation</title>
+<meta name="description" content="RecallFlow transforms meeting conversations into project tasks, documentation updates, and decision logs. Stop manually transcribing and start shipping.">
+<meta property="og:title" content="RecallFlow - AI Meeting Intelligence That Ships Work">
+<meta property="og:description" content="Transform meeting conversations into project tasks, documentation updates, and decision logs. Your meetings finally produce output, not just notes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/recallflow/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RecallFlow - AI Meeting Intelligence That Ships Work">
+<meta name="twitter:description" content="Transform meeting conversations into project tasks, documentation updates, and decision logs. Your meetings finally produce output, not just notes.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{background:#08090a;color:#f7f8f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#5e6ad2;text-decoration:none}
+a:hover{color:#7170ff}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,9,10,0.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{color:rgba(247,248,248,0.6);font-size:14px;font-weight:500;letter-spacing:0.02em;transition:color 0.2s}
+.nav-links a:hover{color:#f7f8f8}
+.logo{font-size:20px;font-weight:700;letter-spacing:-0.03em;color:#f7f8f8}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#5e6ad2;color:#fff!important;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.01em;transition:background 0.2s}
+.cta-btn:hover{background:#7170ff!important}
+.hero{padding:160px 0 100px;text-align:center}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:24px}
+.hero h1 .accent{background:linear-gradient(135deg,#5e6ad2,#7170ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:18px;color:rgba(247,248,248,0.5);max-width:640px;margin:0 auto 40px;line-height:1.7}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-ctas .primary{background:#5e6ad2;color:#fff;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:600;transition:background 0.2s}
+.hero-ctas .primary:hover{background:#7170ff}
+.hero-ctas .ghost{background:transparent;color:#f7f8f8;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:600;border:1px solid rgba(255,255,255,0.12);transition:border-color 0.2s}
+.hero-ctas .ghost:hover{border-color:rgba(255,255,255,0.3)}
+.stats{display:flex;gap:48px;justify-content:center;margin-top:64px;flex-wrap:wrap}
+.stat-item{text-align:center}
+.stat-number{font-size:36px;font-weight:700;letter-spacing:-0.02em;color:#f7f8f8}
+.stat-label{font-size:14px;color:rgba(247,248,248,0.4);margin-top:4px}
+.stat-badge{display:inline-block;background:rgba(94,106,210,0.15);color:#5e6ad2;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:4px;letter-spacing:0.04em}
+.section{padding:100px 0}
+.section-header{text-align:center;margin-bottom:64px}
+.section-header h2{font-size:36px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+.section-header p{font-size:16px;color:rgba(247,248,248,0.4);max-width:480px;margin:0 auto}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pain-card{background:#0f1011;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:32px}
+.pain-card .icon{width:40px;height:40px;border-radius:10px;background:rgba(94,106,210,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.pain-card h3{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:12px}
+.pain-card p{font-size:14px;color:rgba(247,248,248,0.5);line-height:1.7}
+.pain-card .data-callout{margin-top:16px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:8px;font-size:13px;color:#5e6ad2;font-weight:500;border-left:2px solid #5e6ad2}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feature-card{background:#0f1011;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:32px}
+.feature-card .number{font-size:12px;font-weight:700;color:rgba(247,248,248,0.2);letter-spacing:0.08em;margin-bottom:12px}
+.feature-card .icon{width:40px;height:40px;border-radius:10px;background:rgba(94,106,210,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.feature-card h3{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:12px}
+.feature-card p{font-size:14px;color:rgba(247,248,248,0.5);line-height:1.7}
+.feature-card .practice-box{margin-top:16px;padding:14px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+.feature-card .practice-box strong{font-size:12px;color:rgba(247,248,248,0.4);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:6px}
+.feature-card .practice-box span{font-size:13px;color:rgba(247,248,248,0.6);line-height:1.6}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.step{text-align:center}
+.step-circle{width:56px;height:56px;border-radius:50%;background:rgba(94,106,210,0.1);border:2px solid #5e6ad2;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:20px;font-weight:700;color:#5e6ad2}
+.step h3{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:10px}
+.step p{font-size:14px;color:rgba(247,248,248,0.5);line-height:1.7;max-width:300px;margin:0 auto}
+.usecases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.usecase-card{background:#0f1011;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px}
+.usecase-card .icon{width:36px;height:36px;border-radius:8px;background:rgba(94,106,210,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.usecase-card h3{font-size:16px;font-weight:600;letter-spacing:-0.01em;margin-bottom:8px}
+.usecase-card p{font-size:13px;color:rgba(247,248,248,0.5);line-height:1.7}
+.testimonial{text-align:center;max-width:700px;margin:0 auto}
+.testimonial blockquote{font-size:22px;font-weight:500;line-height:1.6;color:rgba(247,248,248,0.85);letter-spacing:-0.01em;margin-bottom:24px}
+.testimonial .author{font-size:14px;color:rgba(247,248,248,0.4)}
+.testimonial .author strong{color:rgba(247,248,248,0.7)}
+.cta-section{text-align:center;padding:80px 0}
+.cta-section h2{font-size:36px;font-weight:700;letter-spacing:-0.02em;margin-bottom:16px}
+.cta-section p{font-size:16px;color:rgba(247,248,248,0.4);max-width:480px;margin:0 auto 32px}
+.waitlist-form{display:flex;gap:12px;justify-content:center;max-width:440px;margin:0 auto}
+.waitlist-form input{flex:1;padding:14px 18px;background:#0f1011;border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#f7f8f8;font-size:15px;outline:none;transition:border-color 0.2s;font-family:inherit}
+.waitlist-form input:focus{border-color:#5e6ad2}
+.waitlist-form input::placeholder{color:rgba(247,248,248,0.25)}
+.waitlist-form button{padding:14px 28px;background:#5e6ad2;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:background 0.2s;font-family:inherit}
+.waitlist-form button:hover{background:#7170ff}
+.success-msg{display:none;color:#4ade80;font-size:15px;padding:16px;background:rgba(74,222,128,0.08);border-radius:10px;max-width:440px;margin:0 auto;border:1px solid rgba(74,222,128,0.15)}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 0}
+footer .container{display:flex;justify-content:space-between;align-items:center}
+footer .copyright{font-size:13px;color:rgba(247,248,248,0.3)}
+footer .links{display:flex;gap:24px}
+footer .links a{font-size:13px;color:rgba(247,248,248,0.3);transition:color 0.2s}
+footer .links a:hover{color:rgba(247,248,248,0.6)}
+@media(max-width:768px){
+.pain-grid,.features-grid{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr;gap:40px}
+.usecases-grid{grid-template-columns:1fr}
+.waitlist-form{flex-direction:column}
+nav .nav-links{display:none}
+.stats{gap:24px}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<div class="logo">RecallFlow</div>
+<div class="nav-links">
+<a href="#pain">Problem</a>
+<a href="#features">Features</a>
+<a href="#how">How It Works</a>
+<a href="#usecases">Use Cases</a>
+<a href="#waitlist" class="cta-btn">Join Waitlist</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<h1>Your meetings finally <span class="accent">ship work</span></h1>
+<p>RecallFlow transforms meeting conversations into project tasks, documentation updates, and decision logs. Your meetings finally produce output, not just notes.</p>
+<div class="hero-ctas">
+<a href="#waitlist" class="primary">Join the Waitlist</a>
+<a href="#features" class="ghost">See How It Works</a>
+</div>
+<div class="stats">
+<div class="stat-item"><div class="stat-number">73%</div><div class="stat-label">Time saved on follow-ups</div><div class="stat-badge">early adopter data</div></div>
+<div class="stat-item"><div class="stat-number">2.4x</div><div class="stat-label">Faster decision-to-action</div><div class="stat-badge">pilot results</div></div>
+<div class="stat-item"><div class="stat-number">94%</div><div class="stat-label">Decision retention rate</div><div class="stat-badge">vs. 38% manually</div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="pain">
+<div class="container">
+<div class="section-header">
+<h2>The meeting productivity crisis</h2>
+<p>Teams spend 31 hours per month in meetings but lose critical decisions and action items in the noise.</p>
+</div>
+<div class="pain-grid">
+<div class="pain-card">
+<div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+<h3>Lost decisions</h3>
+<p>Critical decisions made in meetings are forgotten within 48 hours. Teams rely on memory and scattered notes, leading to misalignment and rework across projects.</p>
+<div class="data-callout">68% of meeting decisions are never documented or tracked</div>
+</div>
+<div class="pain-card">
+<div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+<h3>Manual action tracking</h3>
+<p>Someone has to manually extract action items, assign owners, and chase follow-ups. This takes 2-3 hours per week per team member.</p>
+<div class="data-callout">$1.2B lost annually to unactioned meeting outcomes</div>
+</div>
+<div class="pain-card">
+<div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+<h3>Disconnected tools</h3>
+<p>Meeting notes live in Notion, tasks in Linear, docs in Confluence. No bridge connects conversation to execution, so information fragments across your stack.</p>
+<div class="data-callout">Teams use 5+ tools per meeting workflow</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="features">
+<div class="container">
+<div class="section-header">
+<h2>Your meeting intelligence engine</h2>
+<p>Three capabilities that turn talk into traction.</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="number">01</div>
+<div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+<h3>Smart Action Extraction</h3>
+<p>RecallFlow identifies every action item, owner, and deadline mentioned during a meeting and creates trackable tasks in your project management tool automatically.</p>
+<div class="practice-box">
+<strong>In practice</strong>
+<span>"Assign Sarah to review the Q3 forecast" becomes a Linear task with assignee, due date, and meeting context before you leave the call.</span>
+</div>
+</div>
+<div class="feature-card">
+<div class="number">02</div>
+<div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+<h3>Auto-Documentation</h3>
+<p>Every meeting generates structured documentation -- decisions, rationale, blockers, and next steps -- pushed directly to your wiki or docs platform.</p>
+<div class="practice-box">
+<strong>In practice</strong>
+<span>After sprint planning, RecallFlow updates your wiki with decisions, saves architecture rationales, and appends a changelog entry.</span>
+</div>
+</div>
+<div class="feature-card">
+<div class="number">03</div>
+<div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+<h3>Decision Intelligence</h3>
+<p>RecallFlow cross-references meeting decisions against project timelines and past commitments, flagging conflicts before they become problems.</p>
+<div class="practice-box">
+<strong>In practice</strong>
+<span>The team agrees to push the launch date. RecallFlow checks plans, surfaces 3 conflicting dependencies, and suggests a revised timeline.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="how">
+<div class="container">
+<div class="section-header">
+<h2>How it works</h2>
+<p>Three steps from conversation to completion.</p>
+</div>
+<div class="steps">
+<div class="step">
+<div class="step-circle">1</div>
+<h3>Connect Your Calendar</h3>
+<p>Link Google Calendar or Outlook. RecallFlow joins your meetings automatically and listens in real-time.</p>
+</div>
+<div class="step">
+<div class="step-circle">2</div>
+<h3>Talk Naturally</h3>
+<p>No bots in your conversation. RecallFlow silently processes speech, identifies decisions, actions, and key context.</p>
+</div>
+<div class="step">
+<div class="step-circle">3</div>
+<h3>Work Gets Done</h3>
+<p>Tasks appear in Linear, docs update in Notion, decisions log automatically. Your team never chases a follow-up again.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="usecases">
+<div class="container">
+<div class="section-header">
+<h2>Built for every meeting type</h2>
+</div>
+<div class="usecases-grid">
+<div class="usecase-card">
+<div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+<h3>Sprint Planning</h3>
+<p>Stories, tasks, and sprint goals extracted directly from planning conversations. No admin work required after standup.</p>
+</div>
+<div class="usecase-card">
+<div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+<h3>Client Calls</h3>
+<p>Feature requests, feedback, and change orders captured as structured requirements. Share meeting summaries instantly.</p>
+</div>
+<div class="usecase-card">
+<div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+<h3>Design Reviews</h3>
+<p>Feedback mapped to design files. Actionable revision requests, not ambiguous notes.</p>
+</div>
+<div class="usecase-card">
+<div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+<h3>One-on-Ones</h3>
+<p>Manager feedback, career goals, and personal OKRs tracked confidentially. Build your team's growth history automatically.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="testimonial">
+<blockquote>"We stopped taking meeting notes entirely. RecallFlow captures everything, creates the tickets, and updates our docs. It saved our engineering team 6 hours per week."</blockquote>
+<div class="author"><strong>Alex Chen</strong> -- VP of Engineering, Lattice</div>
+</div>
+</div>
+</section>
+
+<section class="cta-section" id="waitlist">
+<div class="container">
+<h2>Stop transcribing. Start shipping.</h2>
+<p>Join 240+ engineering teams already on the waitlist. Private beta opens June 2026.</p>
+<form class="waitlist-form" id="waitlistForm">
+<input type="email" id="emailInput" placeholder="you@company.com" required>
+<button type="submit">Join Waitlist</button>
+</form>
+<div class="success-msg" id="successMsg">You're on the list. We'll reach out when your spot opens up.</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="copyright">&copy; 2026 RecallFlow. All rights reserved.</div>
+<div class="links">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Contact</a>
+</div>
+</div>
+</footer>
+
+<script>
+document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+e.preventDefault();
+var email = document.getElementById('emailInput').value.trim();
+if (!email) return;
+var key = 'recallflow_waitlist_emails';
+var existing = JSON.parse(localStorage.getItem(key) || '[]');
+existing.push({ email: email, timestamp: new Date().toISOString(), page: 'recallflow' });
+localStorage.setItem(key, JSON.stringify(existing));
+this.style.display = 'none';
+document.getElementById('successMsg').style.display = 'block';
+});
+</script>
+</body>
+</html>
