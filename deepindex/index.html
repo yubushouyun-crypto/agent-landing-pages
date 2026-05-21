@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DeepIndex - AI-Powered Knowledge Search for Teams | Enterprise Search</title>
+<meta name="description" content="DeepIndex lets your team search across docs, Slack, Notion, email, and tickets with natural language. Stop hunting for information. Get answers instantly." />
+<meta property="og:title" content="DeepIndex - AI-Powered Knowledge Search for Teams" />
+<meta property="og:description" content="DeepIndex lets your team search across docs, Slack, Notion, email, and tickets with natural language. Stop hunting for information. Get answers instantly." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/deepindex/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="DeepIndex - AI-Powered Knowledge Search for Teams" />
+<meta name="twitter:description" content="DeepIndex lets your team search across docs, Slack, Notion, email, and tickets with natural language. Stop hunting for information. Get answers instantly." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%235e6ad2'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='system-ui'>D</text></svg>" />
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #08090a;
+  color: #f7f8f8;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  background: rgba(8, 9, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f7f8f8;
+  text-decoration: none;
+}
+.nav-logo span {
+  color: #5e6ad2;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  color: rgba(247, 248, 248, 0.6);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: #f7f8f8;
+}
+.nav-cta {
+  background: #5e6ad2;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover {
+  background: #7170ff !important;
+}
+
+/* Sections */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+}
+
+/* Hero */
+.hero {
+  padding-top: 160px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.hero h1 .accent {
+  background: linear-gradient(135deg, #5e6ad2, #7170ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 18px;
+  color: rgba(247, 248, 248, 0.55);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: #5e6ad2;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: #7170ff;
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: #f7f8f8;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: border-color 0.2s, background 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Stats */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  text-align: center;
+}
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f7f8f8;
+}
+.stat-label {
+  font-size: 14px;
+  color: rgba(247, 248, 248, 0.4);
+  margin-top: 4px;
+  font-weight: 500;
+}
+.stat-badge {
+  display: inline-block;
+  background: rgba(94, 106, 210, 0.15);
+  color: #5e6ad2;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 100px;
+  margin-top: 4px;
+}
+
+/* Pain Section */
+.section-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #5e6ad2;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: rgba(247, 248, 248, 0.5);
+  max-width: 560px;
+  line-height: 1.7;
+}
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+@media (max-width: 900px) {
+  .pain-grid { grid-template-columns: 1fr; }
+}
+.pain-card {
+  background: #0f1011;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 32px;
+  transition: border-color 0.2s;
+}
+.pain-card:hover {
+  border-color: rgba(255,255,255,0.12);
+}
+.pain-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(94, 106, 210, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #5e6ad2;
+}
+.pain-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.pain-card p {
+  font-size: 14px;
+  color: rgba(247, 248, 248, 0.5);
+  line-height: 1.7;
+}
+.pain-data {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(94, 106, 210, 0.06);
+  border-radius: 8px;
+  font-size: 13px;
+  color: #5e6ad2;
+  font-weight: 500;
+  border: 1px solid rgba(94, 106, 210, 0.1);
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+@media (max-width: 900px) {
+  .features-grid { grid-template-columns: 1fr; }
+}
+.feature-card {
+  background: #0f1011;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 32px;
+  transition: border-color 0.2s;
+}
+.feature-card:hover {
+  border-color: rgba(255,255,255,0.12);
+}
+.feature-number {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(247, 248, 248, 0.2);
+  margin-bottom: 12px;
+}
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(94, 106, 210, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #5e6ad2;
+}
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.feature-card > p {
+  font-size: 14px;
+  color: rgba(247, 248, 248, 0.5);
+  line-height: 1.7;
+}
+.feature-example {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: #191a1b;
+  border-radius: 8px;
+  font-size: 13px;
+  color: rgba(247, 248, 248, 0.6);
+  line-height: 1.6;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.feature-example strong {
+  color: #f7f8f8;
+  font-weight: 600;
+}
+
+/* How It Works */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .how-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+.how-step {
+  text-align: center;
+}
+.step-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(94, 106, 210, 0.12);
+  border: 2px solid rgba(94, 106, 210, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #5e6ad2;
+}
+.how-step h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.how-step p {
+  font-size: 14px;
+  color: rgba(247, 248, 248, 0.5);
+  line-height: 1.7;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Use Cases */
+.usecases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+@media (max-width: 700px) {
+  .usecases-grid { grid-template-columns: 1fr; }
+}
+.usecase-card {
+  background: #0f1011;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 28px 32px;
+  transition: border-color 0.2s;
+}
+.usecase-card:hover {
+  border-color: rgba(255,255,255,0.12);
+}
+.usecase-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.usecase-card p {
+  font-size: 14px;
+  color: rgba(247, 248, 248, 0.5);
+  line-height: 1.7;
+}
+
+/* Testimonial */
+.testimonial {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.testimonial blockquote {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color: rgba(247, 248, 248, 0.85);
+  margin-bottom: 24px;
+}
+.testimonial blockquote::before {
+  content: '\201C';
+}
+.testimonial blockquote::after {
+  content: '\201D';
+}
+.testimonial cite {
+  font-size: 14px;
+  font-style: normal;
+  color: rgba(247, 248, 248, 0.4);
+}
+.testimonial cite strong {
+  color: #f7f8f8;
+  font-weight: 600;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 80px 24px 100px;
+}
+.cta-section h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.cta-section p {
+  font-size: 16px;
+  color: rgba(247, 248, 248, 0.5);
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.waitlist-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.waitlist-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #0f1011;
+  color: #f7f8f8;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.waitlist-form input::placeholder {
+  color: rgba(247, 248, 248, 0.3);
+}
+.waitlist-form input:focus {
+  border-color: #5e6ad2;
+}
+.waitlist-form button {
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #5e6ad2;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.waitlist-form button:hover {
+  background: #7170ff;
+}
+.waitlist-success {
+  display: none;
+  padding: 20px;
+  background: rgba(94, 106, 210, 0.08);
+  border: 1px solid rgba(94, 106, 210, 0.2);
+  border-radius: 10px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.waitlist-success p {
+  color: #5e6ad2;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p {
+  font-size: 14px;
+  color: rgba(247, 248, 248, 0.3);
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: rgba(247, 248, 248, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #f7f8f8;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Deep<span>Index</span></a>
+    <div class="nav-links">
+      <a href="#pain">Problem</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Stop hunting. <span class="accent">Start finding.</span></h1>
+  <p>DeepIndex connects your team's scattered knowledge across docs, Slack, Notion, email, and tickets. Ask a question, get an answer — no folder digging required.</p>
+  <div class="hero-ctas">
+    <a href="#waitlist" class="btn-primary">Join Waitlist</a>
+    <a href="#features" class="btn-ghost">See Features</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-number">60%</div>
+      <div class="stat-label">of work time spent searching for info</div>
+      <div class="stat-badge">McKinsey</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">20</div>
+      <div class="stat-label">apps the average team uses daily</div>
+      <div class="stat-badge">Okta 2025</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2.5h</div>
+      <div class="stat-label">wasted per person per day finding data</div>
+      <div class="stat-badge">IDC Report</div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain -->
+<section id="pain" style="padding-top: 80px;">
+  <div class="section-label">The Problem</div>
+  <h2 class="section-title">Your team's knowledge is scattered across 20+ apps</h2>
+  <p class="section-subtitle">Every day, your team wastes hours searching for documents, decisions, and data buried across Slack, Notion, email, Google Docs, and Jira.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">&#x26A0;</div>
+      <h3>Knowledge Silos</h3>
+      <p>Critical information lives in chat threads, email chains, and private docs. New hires spend weeks asking colleagues where to find things — assuming anyone still remembers.</p>
+      <div class="pain-data">Teams lose 30% of institutional knowledge per year due to turnover and scattered tools.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">&#x231B;</div>
+      <h3>Wasted Search Cycles</h3>
+      <p>Team members toggle between 10+ browser tabs and apps trying to locate a single document. Native search across Gmail, Notion, and Slack returns irrelevant results and requires exact keyword matching.</p>
+      <div class="pain-data">Average employee searches 3-5 tools before finding the right document.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">&#x1F504;</div>
+      <h3>Duplicate Work</h3>
+      <p>Without unified search, teams unknowingly recreate documents, designs, and decisions that already exist. A sales deck gets rebuilt from scratch because nobody found the original.</p>
+      <div class="pain-data">Companies lose 20% of productivity to recreating existing work (Gartner).</div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+  <div class="section-label">Features</div>
+  <h2 class="section-title">Search across all your tools. Get real answers.</h2>
+  <p class="section-subtitle">DeepIndex indexes every app your team uses and understands context, so you get the right answer instead of a list of files.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-number">01</div>
+      <div class="feature-icon">&#x1F50D;</div>
+      <h3>Unified Semantic Search</h3>
+      <p>One search bar connects to Notion, Slack, Gmail, Google Drive, Jira, Confluence, and more. DeepIndex understands intent, not just keywords. Ask "What was the Q2 pricing decision?" and get the exact Slack thread with the final call.</p>
+      <div class="feature-example">
+        <strong>In practice:</strong> A product manager asks "Why did we pivot from the enterprise tier?" DeepIndex surfaces the Notion RFC, the Slack decision thread, and the email from the CEO — all ranked by relevance.
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-number">02</div>
+      <div class="feature-icon">&#x1F4CA;</div>
+      <h3>Smart Answers with Citations</h3>
+      <p>Instead of returning a list of links, DeepIndex synthesizes an answer from across your knowledge base and shows you exactly where each fact came from. Every answer includes clickable citations back to the source.</p>
+      <div class="feature-example">
+        <strong>In practice:</strong> An engineer asks "What's our deployment process?" DeepIndex reads the README, the Slack channel pinned post, and the runbook, then returns a step-by-step guide with links to each source.
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-number">03</div>
+      <div class="feature-icon">&#x1F512;</div>
+      <h3>Private by Design</h3>
+      <p>DeepIndex respects your team's existing permissions. Indexed content stays within your workspace. No data leaves your infrastructure. Self-hosted option available for security-conscious teams. SOC 2 compliant.</p>
+      <div class="feature-example">
+        <strong>In practice:</strong> A legal team indexes contracts and policies. When a junior associate searches "non-compete clause," DeepIndex only returns documents they have permission to view — no access escalation.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Set up in minutes. Get value in seconds.</h2>
+  <p class="section-subtitle">Connect your tools, index your knowledge, and start searching. No complex configuration or dedicated IT team required.</p>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="step-circle">1</div>
+      <h3>Connect Your Tools</h3>
+      <p>One-click OAuth integration with Slack, Notion, Gmail, Google Drive, Jira, Confluence, and 20+ more. DeepIndex automatically discovers all shared channels, docs, and spaces.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-circle">2</div>
+      <h3>We Index Your Knowledge</h3>
+      <p>DeepIndex creates a semantic index of your team's content. It understands relationships between documents, conversations, and decisions. New content syncs in near real-time.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-circle">3</div>
+      <h3>Ask Anything</h3>
+      <p>Type a question in natural language. DeepIndex searches across every connected tool, synthesizes the answer, and cites sources. Install the Slack bot for instant answers without leaving chat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section id="usecases">
+  <div class="section-label">Use Cases</div>
+  <h2 class="section-title">Built for real teams</h2>
+  <div class="usecases-grid">
+    <div class="usecase-card">
+      <h3>Onboarding New Hires</h3>
+      <p>New team members ask questions in natural language and get instant answers with context. Cut ramp-up time from weeks to days. No more asking ten people where the onboarding checklist lives.</p>
+    </div>
+    <div class="usecase-card">
+      <h3>Customer Support Resolution</h3>
+      <p>Support agents search past tickets, knowledge base articles, and internal docs from one interface. Resolve tickets 40% faster by finding the exact solution that worked last time.</p>
+    </div>
+    <div class="usecase-card">
+      <h3>Engineering Decision Retrieval</h3>
+      <p>Find architectural decisions, PR discussions, and incident post-mortems instantly. Engineers stop interrupting teammates to ask "why did we choose this database?" — DeepIndex already knows.</p>
+    </div>
+    <div class="usecase-card">
+      <h3>Sales Enablement</h3>
+      <p>Sales teams search across proposals, pricing docs, competitor analysis, and customer call notes. Answer prospect questions with accurate, up-to-date information drawn from every department.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial">
+  <blockquote>Before DeepIndex, our team spent the first hour of every day hunting for documents. Now we just ask. It sounds small, but it changed how we work.</blockquote>
+  <cite><strong>Sarah Chen</strong>, VP of Engineering, a 50-person SaaS startup</cite>
+</section>
+
+<!-- CTA -->
+<section id="waitlist" class="cta-section">
+  <h2>Ready to find what matters?</h2>
+  <p>Join 500+ teams on the waitlist. Early access shipping in Q3 2026. Free for teams up to 10.</p>
+  <div class="waitlist-form" id="waitlistForm">
+    <input type="email" id="emailInput" placeholder="you@company.com" required />
+    <button onclick="submitWaitlist()">Join Waitlist</button>
+  </div>
+  <div class="waitlist-success" id="waitlistSuccess">
+    <p>You're on the list. We'll notify you when DeepIndex is ready.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 DeepIndex. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+var slug = 'deepindex';
+
+function submitWaitlist() {
+  var input = document.getElementById('emailInput');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  var key = slug + '_waitlist_emails';
+  var existing = JSON.parse(localStorage.getItem(key) || '[]');
+  existing.push({
+    email: email,
+    timestamp: new Date().toISOString(),
+    page: slug
+  });
+  localStorage.setItem(key, JSON.stringify(existing));
+
+  document.getElementById('waitlistForm').style.display = 'none';
+  document.getElementById('waitlistSuccess').style.display = 'block';
+
+  fetch('http://localhost:9090/api/waitlist/' + slug, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+}
+</script>
+
+<img src="http://localhost:9090/track/deepindex.gif" width="1" height="1" alt="" />
+</body>
+</html>
