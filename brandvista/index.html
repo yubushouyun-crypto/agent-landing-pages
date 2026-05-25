@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BrandVista - Know How Your Brand Appears in Every AI Conversation | AI Brand Visibility Monitoring</title>
+<meta name="description" content="BrandVista monitors how your brand appears across ChatGPT, Claude, Gemini, and Perplexity in real-time. Detect AI hallucinations, track sentiment, and optimize your brand for the AI-powered search era." />
+<meta property="og:title" content="BrandVista - AI Brand Visibility Monitoring" />
+<meta property="og:description" content="Know how your brand appears in every AI conversation. Real-time monitoring across ChatGPT, Claude, Gemini, and Perplexity." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/brandvista/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BrandVista - AI Brand Visibility Monitoring" />
+<meta name="twitter:description" content="Know how your brand appears in every AI conversation. Detect hallucinations, track sentiment, and optimize for AI search." />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #08090a;
+  color: #f7f8f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: #5e6ad2; text-decoration: none; transition: color 0.2s; }
+a:hover { color: #7170ff; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Navigation */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(8, 9, 10, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(247, 248, 248, 0.06);
+}
+nav .container {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+nav .logo {
+  font-size: 18px; font-weight: 700;
+  color: #f7f8f8;
+  letter-spacing: -0.02em;
+}
+nav .logo span { color: #5e6ad2; }
+nav .nav-links { display: flex; align-items: center; gap: 32px; }
+nav .nav-links a {
+  color: rgba(247, 248, 248, 0.6);
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+nav .nav-links a:hover { color: #f7f8f8; }
+nav .cta-btn {
+  display: inline-block;
+  background: #5e6ad2;
+  color: #fff;
+  font-size: 13px; font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+nav .cta-btn:hover { background: #7170ff; color: #fff; }
+
+/* Hero */
+.hero {
+  padding: 160px 0 80px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 52px; font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.hero h1 .accent {
+  background: linear-gradient(135deg, #5e6ad2, #7170ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 18px; color: rgba(247, 248, 248, 0.55);
+  max-width: 640px; margin: 0 auto 36px;
+  letter-spacing: 0.01em;
+}
+.hero-btns { display: flex; gap: 14px; justify-content: center; margin-bottom: 56px; }
+.btn-primary {
+  display: inline-block;
+  background: #5e6ad2;
+  color: #fff;
+  font-size: 15px; font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #7170ff; color: #fff; transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-block;
+  border: 1px solid rgba(247, 248, 248, 0.15);
+  color: rgba(247, 248, 248, 0.8);
+  font-size: 15px; font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: rgba(247, 248, 248, 0.3); color: #f7f8f8; }
+.hero-stats {
+  display: flex; justify-content: center; gap: 48px;
+}
+.stat-item { text-align: center; }
+.stat-item .number {
+  font-size: 28px; font-weight: 700;
+  color: #f7f8f8;
+  letter-spacing: -0.02em;
+}
+.stat-item .label {
+  font-size: 13px; color: rgba(247, 248, 248, 0.4);
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+.stat-badge {
+  display: inline-block;
+  background: rgba(94, 106, 210, 0.12);
+  color: #5e6ad2;
+  font-size: 11px; font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  margin-top: 6px;
+}
+
+/* Sections */
+section { padding: 96px 0; }
+.section-label {
+  font-size: 12px; font-weight: 600;
+  color: #5e6ad2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: 36px; font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.section-desc {
+  font-size: 16px; color: rgba(247, 248, 248, 0.5);
+  max-width: 600px;
+  margin-bottom: 48px;
+  letter-spacing: 0.01em;
+}
+
+/* Pain Section */
+.pain-section { background: #0f1011; }
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pain-card {
+  background: #191a1b;
+  border: 1px solid rgba(247, 248, 248, 0.06);
+  border-radius: 12px;
+  padding: 32px;
+  transition: border-color 0.2s;
+}
+.pain-card:hover { border-color: rgba(94, 106, 210, 0.3); }
+.pain-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: rgba(94, 106, 210, 0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  color: #5e6ad2;
+  font-size: 18px;
+  font-weight: 700;
+}
+.pain-card h3 {
+  font-size: 18px; font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.pain-card p {
+  font-size: 14px; color: rgba(247, 248, 248, 0.5);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+.pain-card .data-callout {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 12px;
+  background: rgba(94, 106, 210, 0.08);
+  border: 1px solid rgba(94, 106, 210, 0.15);
+  border-radius: 6px;
+  font-size: 12px; font-weight: 600;
+  color: #5e6ad2;
+  letter-spacing: 0.02em;
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature-card {
+  background: #191a1b;
+  border: 1px solid rgba(247, 248, 248, 0.06);
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.feature-card:hover { border-color: rgba(94, 106, 210, 0.3); }
+.feature-number {
+  font-size: 11px; font-weight: 700;
+  color: rgba(247, 248, 248, 0.15);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.feature-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: rgba(94, 106, 210, 0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  color: #5e6ad2;
+  font-size: 18px;
+  font-weight: 700;
+}
+.feature-card h3 {
+  font-size: 18px; font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.feature-card > p {
+  font-size: 14px; color: rgba(247, 248, 248, 0.5);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+}
+.in-practice {
+  background: #0f1011;
+  border: 1px solid rgba(247, 248, 248, 0.06);
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 12px;
+  color: rgba(247, 248, 248, 0.6);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+.in-practice strong { color: #f7f8f8; font-weight: 600; }
+
+/* How It Works */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.how-step { text-align: center; }
+.step-circle {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(94, 106, 210, 0.12);
+  color: #5e6ad2;
+  font-size: 18px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  border: 1px solid rgba(94, 106, 210, 0.2);
+}
+.how-step h3 {
+  font-size: 16px; font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.how-step p {
+  font-size: 14px; color: rgba(247, 248, 248, 0.5);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Use Cases */
+.use-section { background: #0f1011; }
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.use-card {
+  background: #191a1b;
+  border: 1px solid rgba(247, 248, 248, 0.06);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 0.2s;
+}
+.use-card:hover { border-color: rgba(94, 106, 210, 0.3); }
+.use-card h3 {
+  font-size: 16px; font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.use-card p {
+  font-size: 14px; color: rgba(247, 248, 248, 0.5);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Testimonial */
+.testimonial {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.testimonial blockquote {
+  font-size: 22px; font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: rgba(247, 248, 248, 0.85);
+  margin-bottom: 24px;
+  font-style: normal;
+}
+.testimonial blockquote::before { content: '\201C'; }
+.testimonial blockquote::after { content: '\201D'; }
+.testimonial cite {
+  font-size: 14px; font-style: normal;
+  color: rgba(247, 248, 248, 0.4);
+  letter-spacing: 0.02em;
+}
+.testimonial cite strong {
+  color: #f7f8f8;
+  font-weight: 600;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(180deg, #08090a 0%, #0f1011 100%);
+  border-top: 1px solid rgba(247, 248, 248, 0.06);
+  text-align: center;
+}
+.cta-form { margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.cta-input-group { display: flex; gap: 10px; }
+.cta-input {
+  background: #191a1b;
+  border: 1px solid rgba(247, 248, 248, 0.1);
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 15px;
+  color: #f7f8f8;
+  font-family: inherit;
+  width: 320px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.cta-input:focus { border-color: #5e6ad2; }
+.cta-input::placeholder { color: rgba(247, 248, 248, 0.3); }
+.cta-submit {
+  background: #5e6ad2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+.cta-submit:hover { background: #7170ff; }
+.cta-success {
+  display: none;
+  padding: 16px 24px;
+  background: rgba(94, 106, 210, 0.1);
+  border: 1px solid rgba(94, 106, 210, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  color: #5e6ad2;
+  font-weight: 500;
+}
+.cta-note {
+  font-size: 12px; color: rgba(247, 248, 248, 0.3);
+  letter-spacing: 0.01em;
+}
+
+/* Footer */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid rgba(247, 248, 248, 0.06);
+}
+footer .container {
+  display: flex; align-items: center; justify-content: space-between;
+}
+footer .logo { font-size: 16px; font-weight: 700; color: #f7f8f8; }
+footer .logo span { color: #5e6ad2; }
+footer .links { display: flex; gap: 24px; }
+footer .links a {
+  font-size: 13px; color: rgba(247, 248, 248, 0.35);
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+footer .links a:hover { color: rgba(247, 248, 248, 0.7); }
+footer .copy {
+  font-size: 13px; color: rgba(247, 248, 248, 0.2);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 34px; }
+  .pain-grid, .features-grid, .how-grid { grid-template-columns: 1fr; }
+  .use-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 24px; }
+  .cta-input-group { flex-direction: column; }
+  .cta-input { width: 100%; }
+  nav .nav-links { display: none; }
+  .section-title { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Brand<span>Vista</span></div>
+    <div class="nav-links">
+      <a href="#pain">Problems</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#waitlist" class="cta-btn">Join Waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Know How Your Brand Appears<br/>in Every <span class="accent">AI Conversation</span></h1>
+    <p>Monitor your brand presence across ChatGPT, Claude, Gemini, and Perplexity. Detect AI hallucinations about your products. Optimize your brand for the era of AI-powered search.</p>
+    <div class="hero-btns">
+      <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+      <a href="#features" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="number">68%</div>
+        <div class="label">Consumers use AI for product research</div>
+        <div class="stat-badge">Gartner 2026</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">4x</div>
+        <div class="label">AI-referred conversion vs. organic search</div>
+        <div class="stat-badge">Industry Data</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">10M</div>
+        <div class="label">Monthly AI brand queries (and growing)</div>
+        <div class="stat-badge">Projected 2027</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pain-section" id="pain">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">AI Is Rewriting Your Brand Story. Are You In Control?</h2>
+    <p class="section-desc">Traditional SEO and brand monitoring tools were built for the search engine era. They are completely blind to how AI models perceive and describe your business.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">01</div>
+        <h3>The AI Search Blind Spot</h3>
+        <p>68% of consumers now use AI chatbots for product research, but no existing brand monitoring tool reports what AI models are saying about your brand. You are flying blind in the fastest-growing discovery channel.</p>
+        <div class="data-callout">68% of consumers use AI for product research</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">02</div>
+        <h3>Hallucinated Brand Facts</h3>
+        <p>AI models routinely fabricate pricing, product specifications, and company history. A single hallucination about your pricing being 30% lower than reality can trigger a flood of unqualified support tickets and lost revenue.</p>
+        <div class="data-callout">19% of AI responses contain brand inaccuracies</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">03</div>
+        <h3>Zero Visibility Into AI Reputation</h3>
+        <p>Your brand is being discussed, compared, and recommended in millions of private AI conversations daily. You have no dashboard, no alerts, and no way to know if AI is your best advocate or your worst detractor.</p>
+        <div class="data-callout">AI conversations drive 3x higher conversion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Complete AI Brand Intelligence Suite</h2>
+    <p class="section-desc">Three integrated tools that give you full visibility and control over your brand's AI footprint.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-number">01</div>
+        <div class="feature-icon">M</div>
+        <h3>AI Search Monitor</h3>
+        <p>Real-time tracking of your brand's appearance across ChatGPT, Claude, Gemini, and Perplexity. See exactly what AI models say about your products, pricing, and positioning.</p>
+        <div class="in-practice">
+          <strong>In practice:</strong> A DTC brand discovers ChatGPT consistently recommends a competitor over them for 40% of product queries. Within a week, they identify the gap in their AI training data and close it.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-number">02</div>
+        <div class="feature-icon">A</div>
+        <h3>Sentiment & Accuracy Audit</h3>
+        <p>Detect AI hallucinations about your brand in real-time. Get alerted when models present incorrect pricing, outdated product features, or fabricated claims about your business.</p>
+        <div class="in-practice">
+          <strong>In practice:</strong> A SaaS company is alerted that Claude is describing their pricing as "starting at $49/mo" when they raised prices to $79/mo six months ago. They update their structured data and the hallucination resolves in 48 hours.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-number">03</div>
+        <div class="feature-icon">O</div>
+        <h3>AI Optimization Score</h3>
+        <p>An actionable score (0-100) measuring your brand's AI visibility, accuracy, and sentiment. Get prioritized recommendations to improve how AI models understand and represent your brand.</p>
+        <div class="in-practice">
+          <strong>In practice:</strong> An e-commerce brand improves from a score of 42 to 89 by implementing structured data, publishing authoritative product content, and adding AI-friendly FAQ pages. AI-referred traffic increases 3x.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background: #0f1011;">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From Setup to Insight in Minutes</h2>
+    <p class="section-desc">No complex integration. Just enter your brand name and start monitoring.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="step-circle">1</div>
+        <h3>Add Your Brand</h3>
+        <p>Enter your brand name and website URL. Our system immediately begins monitoring how your brand appears across major AI platforms.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-circle">2</div>
+        <h3>AI Scans Your Presence</h3>
+        <p>We query ChatGPT, Claude, Gemini, and Perplexity daily, collecting every mention, description, and recommendation related to your brand.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-circle">3</div>
+        <h3>Get Actionable Intelligence</h3>
+        <p>Receive a daily dashboard with accuracy alerts, sentiment trends, competitive positioning data, and prioritized optimization recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="use-section" id="use-cases">
+  <div class="container">
+    <div class="section-label">Use Cases</div>
+    <h2 class="section-title">Who Needs AI Brand Visibility</h2>
+    <p class="section-desc">From marketing teams to founders, anyone who cares about brand perception needs BrandVista.</p>
+    <div class="use-grid">
+      <div class="use-card">
+        <h3>Brand Marketing Teams</h3>
+        <p>Track real-time brand sentiment across AI platforms. Get alerted when AI models misrepresent your brand positioning or product features. Measure your share of voice in AI-generated recommendations.</p>
+      </div>
+      <div class="use-card">
+        <h3>E-Commerce & DTC Brands</h3>
+        <p>Ensure AI shopping assistants recommend your products accurately. Detect competitor name-dropping in your category. Optimize product data so AI models return your listings with correct pricing and availability.</p>
+      </div>
+      <div class="use-card">
+        <h3>PR & Reputation Teams</h3>
+        <p>Monitor how AI models respond to crisis events involving your brand. Catch AI hallucinations about your company's history, leadership, or financials before they spread across user conversations.</p>
+      </div>
+      <div class="use-card">
+        <h3>SaaS & B2B Companies</h3>
+        <p>Ensure AI coding assistants and enterprise AI tools recommend your product correctly. Track feature comparisons in AI-generated evaluations. Verify your documentation feeds accurate AI training data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial" style="padding: 80px 0;">
+  <div class="container">
+    <blockquote>We discovered ChatGPT was recommending a competitor's pricing page for our product name search. BrandVista caught it on day one. We fixed it in 24 hours. That alone was worth the investment.</blockquote>
+    <cite>&mdash; <strong>Sarah Chen</strong>, Head of Digital, Pulse Commerce</cite>
+  </div>
+</section>
+
+<section class="cta-section" id="waitlist">
+  <div class="container">
+    <div class="section-label">Early Access</div>
+    <h2 class="section-title">Join the Waitlist</h2>
+    <p class="section-desc" style="margin: 0 auto 16px;">Be among the first to take control of your brand's AI presence. Early adopters get priority access and a free AI brand audit.</p>
+    <div class="cta-form">
+      <div class="cta-input-group">
+        <input type="email" class="cta-input" id="waitlist-email" placeholder="Enter your work email" />
+        <button class="cta-submit" id="waitlist-btn">Join Waitlist</button>
+      </div>
+      <div class="cta-note">No spam. Unsubscribe anytime.</div>
+      <div class="cta-success" id="waitlist-success">You're on the list. We'll notify you when BrandVista launches.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="logo">Brand<span>Vista</span></div>
+    <div class="links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="copy">&copy; 2026 BrandVista. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+var slug = 'brandvista';
+var form = document.getElementById('waitlist-email');
+var btn = document.getElementById('waitlist-btn');
+var success = document.getElementById('waitlist-success');
+
+btn.addEventListener('click', function() {
+  var email = form.value.trim();
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  var stored = JSON.parse(localStorage.getItem(slug + '_waitlist_emails') || '[]');
+  stored.push({ email: email, timestamp: new Date().toISOString(), page: slug });
+  localStorage.setItem(slug + '_waitlist_emails', JSON.stringify(stored));
+  form.value = '';
+  form.style.display = 'none';
+  btn.style.display = 'none';
+  document.querySelector('.cta-note').style.display = 'none';
+  success.style.display = 'block';
+  fetch('http://localhost:9090/api/waitlist/' + slug, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+});
+</script>
+
+<img src="http://localhost:9090/track/brandvista.gif" width="1" height="1" alt="" />
+</body>
+</html>
