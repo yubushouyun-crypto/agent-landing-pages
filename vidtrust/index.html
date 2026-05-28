@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VidTrust - AI Liveness Detection for Video KYC | Deepfake Prevention API</title>
+<meta name="description" content="Protect your video KYC process from deepfakes, pre-recorded playback, and face swaps. VidTrust's real-time liveness detection API verifies that your users are real humans, not AI-generated media.">
+<meta property="og:title" content="VidTrust - AI Liveness Detection for Video KYC">
+<meta property="og:description" content="Protect your video KYC process from deepfakes, pre-recorded playback, and face swaps. Real-time liveness verification for fintech and identity platforms.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/vidtrust/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VidTrust - AI Liveness Detection for Video KYC">
+<meta name="twitter:description" content="Real-time deepfake detection and liveness verification API for video KYC. Protect your platform from AI-generated identity fraud.">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #08090a;
+  color: #f7f8f8;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Nav */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background: rgba(8,9,10,0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+nav .container {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+nav .logo { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; color: #f7f8f8; }
+nav .nav-links { display: flex; align-items: center; gap: 32px; }
+nav .nav-links a { color: rgba(247,248,248,0.6); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+nav .nav-links a:hover { color: #f7f8f8; }
+nav .cta-btn {
+  display: inline-block; padding: 8px 20px; background: #5e6ad2; border-radius: 6px;
+  color: #fff; text-decoration: none; font-size: 14px; font-weight: 600;
+  transition: background 0.2s;
+}
+nav .cta-btn:hover { background: #7170ff; }
+
+/* Hero */
+.hero {
+  padding: 160px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(94,106,210,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero h1 {
+  font-size: 56px; font-weight: 700; letter-spacing: -0.03em;
+  line-height: 1.15; max-width: 800px; margin: 0 auto 24px;
+}
+.hero h1 .accent {
+  background: linear-gradient(135deg, #5e6ad2, #7170ff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 18px; color: rgba(247,248,248,0.55);
+  max-width: 580px; margin: 0 auto 40px;
+}
+.hero .cta-group { display: flex; gap: 12px; justify-content: center; margin-bottom: 64px; }
+.hero .btn-primary {
+  display: inline-block; padding: 14px 32px;
+  background: #5e6ad2; border-radius: 8px;
+  color: #fff; text-decoration: none; font-size: 15px; font-weight: 600;
+  transition: background 0.2s;
+}
+.hero .btn-primary:hover { background: #7170ff; }
+.hero .btn-ghost {
+  display: inline-block; padding: 14px 32px;
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
+  color: rgba(247,248,248,0.7); text-decoration: none; font-size: 15px; font-weight: 500;
+  transition: all 0.2s;
+}
+.hero .btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: #f7f8f8; }
+.hero .stats { display: flex; gap: 48px; justify-content: center; }
+.hero .stat { text-align: center; }
+.hero .stat .num { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: #f7f8f8; }
+.hero .stat .label { font-size: 13px; color: rgba(247,248,248,0.4); margin-top: 4px; letter-spacing: 0.02em; }
+.hero .stat .badge { font-size: 11px; color: #5e6ad2; font-weight: 600; margin-top: 2px; }
+
+/* Sections */
+.section { padding: 100px 0; }
+.section-title {
+  font-size: 36px; font-weight: 700; letter-spacing: -0.02em;
+  text-align: center; margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 16px; color: rgba(247,248,248,0.45);
+  text-align: center; max-width: 560px; margin: 0 auto 56px;
+}
+
+/* Pain */
+.pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pain-card {
+  background: #0f1011; border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 32px;
+}
+.pain-card .icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 18px;
+}
+.pain-card:nth-child(1) .icon { background: rgba(94,106,210,0.15); color: #5e6ad2; }
+.pain-card:nth-child(2) .icon { background: rgba(113,112,255,0.15); color: #7170ff; }
+.pain-card:nth-child(3) .icon { background: rgba(94,106,210,0.15); color: #5e6ad2; }
+.pain-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.01em; }
+.pain-card p { font-size: 14px; color: rgba(247,248,248,0.55); line-height: 1.7; }
+.pain-card .data-callout {
+  margin-top: 16px; padding: 12px 16px;
+  background: rgba(94,106,210,0.08); border-left: 3px solid #5e6ad2;
+  border-radius: 4px; font-size: 13px; color: rgba(247,248,248,0.7);
+}
+
+/* Features */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feature-card {
+  background: #0f1011; border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 32px; position: relative;
+}
+.feature-card .num {
+  font-size: 12px; font-weight: 700; color: rgba(247,248,248,0.2);
+  letter-spacing: 0.08em; margin-bottom: 12px;
+}
+.feature-card .icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 18px;
+  background: rgba(94,106,210,0.15); color: #5e6ad2;
+}
+.feature-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.01em; }
+.feature-card p { font-size: 14px; color: rgba(247,248,248,0.55); line-height: 1.7; }
+.feature-card .practice {
+  margin-top: 16px; padding: 12px 16px;
+  background: #191a1b; border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px; font-size: 13px; color: rgba(247,248,248,0.6);
+}
+.feature-card .practice strong { color: rgba(247,248,248,0.8); }
+
+/* How It Works */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; position: relative; }
+.steps::before {
+  content: ''; position: absolute; top: 32px; left: 16%; right: 16%;
+  height: 2px; background: rgba(255,255,255,0.06);
+}
+.step { text-align: center; }
+.step .circle {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px; font-size: 20px; font-weight: 700;
+  background: rgba(94,106,210,0.12); color: #5e6ad2;
+  border: 2px solid rgba(94,106,210,0.2); position: relative; z-index: 1;
+}
+.step h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.step p { font-size: 14px; color: rgba(247,248,248,0.5); line-height: 1.6; max-width: 280px; margin: 0 auto; }
+
+/* Use Cases */
+.usecases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.usecase-card {
+  background: #0f1011; border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 32px;
+  transition: border-color 0.2s;
+}
+.usecase-card:hover { border-color: rgba(94,106,210,0.3); }
+.usecase-card .icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px; font-size: 16px;
+  background: rgba(94,106,210,0.12); color: #5e6ad2;
+}
+.usecase-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.usecase-card p { font-size: 14px; color: rgba(247,248,248,0.5); line-height: 1.7; }
+
+/* Testimonial */
+.testimonial {
+  background: #0f1011; border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px; padding: 48px; max-width: 800px; margin: 0 auto;
+  text-align: center;
+}
+.testimonial blockquote {
+  font-size: 20px; line-height: 1.6; color: rgba(247,248,248,0.8);
+  font-weight: 500; margin-bottom: 24px;
+}
+.testimonial .author { font-size: 14px; color: rgba(247,248,248,0.4); }
+.testimonial .author strong { color: rgba(247,248,248,0.7); }
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, rgba(94,106,210,0.06), rgba(113,112,255,0.04));
+  border-radius: 16px; padding: 80px 48px; text-align: center;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.cta-section h2 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+.cta-section p { color: rgba(247,248,248,0.5); margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-form { display: flex; gap: 12px; justify-content: center; max-width: 480px; margin: 0 auto; }
+.cta-form input[type="email"] {
+  flex: 1; padding: 14px 18px;
+  background: #0f1011; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; color: #f7f8f8; font-size: 15px; font-family: inherit;
+  outline: none; transition: border-color 0.2s;
+}
+.cta-form input[type="email"]:focus { border-color: #5e6ad2; }
+.cta-form input[type="email"]::placeholder { color: rgba(247,248,248,0.3); }
+.cta-form button[type="submit"] {
+  padding: 14px 28px; background: #5e6ad2; border: none; border-radius: 8px;
+  color: #fff; font-size: 15px; font-weight: 600; font-family: inherit;
+  cursor: pointer; transition: background 0.2s;
+}
+.cta-form button[type="submit"]:hover { background: #7170ff; }
+.cta-success { display: none; color: rgba(94,106,210,0.9); font-size: 16px; padding: 16px; }
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 40px 0; margin-top: 80px;
+}
+footer .container {
+  display: flex; align-items: center; justify-content: space-between;
+}
+footer .copy { font-size: 13px; color: rgba(247,248,248,0.3); }
+footer .links { display: flex; gap: 24px; }
+footer .links a { font-size: 13px; color: rgba(247,248,248,0.35); text-decoration: none; transition: color 0.2s; }
+footer .links a:hover { color: rgba(247,248,248,0.6); }
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 36px; }
+  .hero .stats { flex-direction: column; gap: 24px; }
+  .pain-grid, .features-grid, .steps { grid-template-columns: 1fr; }
+  .usecases-grid { grid-template-columns: 1fr; }
+  .steps::before { display: none; }
+  .cta-form { flex-direction: column; }
+  nav .nav-links { display: none; }
+  footer .container { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">VidTrust</div>
+    <div class="nav-links">
+      <a href="#pain">Problem</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#cta" class="cta-btn">Join Waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Verify real humans. <span class="accent">Block deepfakes.</span></h1>
+    <p>VidTrust is a real-time liveness detection API that protects video KYC processes from deepfakes, pre-recorded playback, and face-swap attacks. One integration, instant trust.</p>
+    <div class="cta-group">
+      <a href="#cta" class="btn-primary">Join Waitlist</a>
+      <a href="#features" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">99.7%</div>
+        <div class="label">Detection Accuracy</div>
+        <div class="badge">vs. known attack vectors</div>
+      </div>
+      <div class="stat">
+        <div class="num">350ms</div>
+        <div class="label">Average Response Time</div>
+        <div class="badge">real-time verification</div>
+      </div>
+      <div class="stat">
+        <div class="num">12</div>
+        <div class="label">Attack Types Detected</div>
+        <div class="badge">deepfakes, replays, masks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pain">
+  <div class="container">
+    <h2 class="section-title">Video KYC is under siege</h2>
+    <p class="section-subtitle">As banks and fintechs push video-based identity verification, AI-generated fraud is growing faster than most detection tools can keep up.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">&#9670;</div>
+        <h3>Deepfake identity theft</h3>
+        <p>AI-generated face swaps and deepfake videos can now pass traditional KYC checks. Attackers use real-time face filters to impersonate customers during live video calls.</p>
+        <div class="data-callout">Banks reported a 72% increase in synthetic identity fraud attempts using AI-generated media in 2025</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">&#9670;</div>
+        <h3>Pre-recorded playback attacks</h3>
+        <p>Fraudsters replay stolen video recordings during KYC sessions. Standard motion-detection checks -- blink, nod, smile -- are easily bypassed with recorded responses.</p>
+        <div class="data-callout">Playback and replay attacks account for 41% of video KYC fraud incidents globally</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">&#9670;</div>
+        <h3>Cost of manual review</h3>
+        <p>Human reviewers flag only 34% of deepfake attacks, while adding 3-5 minutes per verification. At scale, this creates a bottleneck that costs fintechs millions annually.</p>
+        <div class="data-callout">Enterprise KYC teams spend an average of $4.20 per manual review, with 25% false positive rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <h2 class="section-title">Built for trust at scale</h2>
+    <p class="section-subtitle">Three layers of AI-powered verification that work together to catch every known attack vector.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="num">01</div>
+        <div class="icon">&#9670;</div>
+        <h3>Liveness Detection Engine</h3>
+        <p>Analyzes micro-movements, skin texture, depth variance, and light reflection patterns to distinguish a live human face from a screen, mask, or deepfake overlay.</p>
+        <div class="practice"><strong>In practice:</strong> A user holds their phone for a 15-second scan. VidTrust analyzes 60+ micro-signals and returns a liveness score in under 400ms.</div>
+      </div>
+      <div class="feature-card">
+        <div class="num">02</div>
+        <div class="icon">&#9670;</div>
+        <h3>Playback Attack Defense</h3>
+        <p>Detects re-recorded screens, high-frequency refresh artifacts, and secondary lighting inconsistencies that reveal a pre-recorded video being played back.</p>
+        <div class="practice"><strong>In practice:</strong> A fraudster tries to replay a stolen selfie video. The engine detects pixel refresh patterns and returns a block verdict before the video call connects.</div>
+      </div>
+      <div class="feature-card">
+        <div class="num">03</div>
+        <div class="icon">&#9670;</div>
+        <h3>Face Swap & Deepfake Detection</h3>
+        <p>Uses temporal analysis across video frames, checking for AI-generation artifacts, blink irregularity, and identity consistency across the session duration.</p>
+        <div class="practice"><strong>In practice:</strong> A DeepSwap filter is applied mid-call. VidTrust detects the transition point and flags the session with a frame-by-frame forensic report for compliance teams.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <h2 class="section-title">How it works</h2>
+    <p class="section-subtitle">Three steps to integrate world-class liveness detection into any video KYC flow.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="circle">1</div>
+        <h3>Integrate the SDK</h3>
+        <p>Add our lightweight SDK to your web or mobile app. Five lines of code, 15 minutes to integration. Works with any video stream.</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <h3>Run liveness check</h3>
+        <p>User faces the camera for a 15-second scan. Our engine analyzes micro-expressions, skin texture, depth, and lighting in real time.</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <h3>Get a trust score</h3>
+        <p>Receive a liveness confidence score, attack classification report, and a block or pass verdict. All data is stored for compliance audit trails.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="usecases">
+  <div class="container">
+    <h2 class="section-title">Use cases</h2>
+    <p class="section-subtitle">Trusted by teams securing remote identity verification across industries.</p>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <div class="icon">&#9670;</div>
+        <h3>Fintech onboarding</h3>
+        <p>Verify that new account applicants are real humans during video KYC sessions. Block synthetic identity fraud before accounts are created.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="icon">&#9670;</div>
+        <h3>Remote banking</h3>
+        <p>Neobanks and digital lenders use VidTrust to verify customer identity during loan application video calls, reducing fraud losses by up to 68%.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="icon">&#9670;</div>
+        <h3>Age verification</h3>
+        <p>Social platforms and gaming apps verify users are real people of the claimed age during live video verification, complying with new regulatory mandates.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="icon">&#9670;</div>
+        <h3>Remote hiring</h3>
+        <p>Verify candidate identity during remote interviews and skill assessments. Ensure the person on the video call is the same person throughout the process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="testimonial">
+      <blockquote>"We were catching maybe one in three deepfake attempts before VidTrust. After integrating their liveness detection API, our fraud team's manual review workload dropped by 80% and we blocked 97% of AI-generated identity fraud."</blockquote>
+      <div class="author">— <strong>VP of Compliance</strong>, leading APAC digital bank</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cta">
+  <div class="container">
+    <div class="cta-section">
+      <h2>Secure your video KYC today</h2>
+      <p>Join the waitlist for early access to our liveness detection API. Free tier for up to 500 verifications per month.</p>
+      <form class="cta-form" id="waitlist-form">
+        <input type="email" id="email-input" placeholder="you@company.com" required>
+        <button type="submit">Join Waitlist</button>
+      </form>
+      <div class="cta-success" id="success-msg">You are on the waitlist. We will be in touch soon.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="copy">&copy; 2026 VidTrust. All rights reserved.</div>
+    <div class="links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var slug = 'vidtrust';
+  var form = document.getElementById('waitlist-form');
+  var emailInput = document.getElementById('email-input');
+  var successMsg = document.getElementById('success-msg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = emailInput.value.trim();
+    if (!email) return;
+
+    // Save to localStorage
+    try {
+      var key = slug + '_waitlist_emails';
+      var existing = JSON.parse(localStorage.getItem(key) || '[]');
+      existing.push({ email: email, timestamp: new Date().toISOString(), page: slug });
+      localStorage.setItem(key, JSON.stringify(existing));
+    } catch(e) {}
+
+    // POST to dashboard API
+    fetch('http://localhost:9090/api/waitlist/' + slug, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    }).catch(function() {});
+
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+  });
+})();
+</script>
+<img src="http://localhost:9090/track/vidtrust.gif" width="1" height="1" alt="" />
+</body>
+</html>
