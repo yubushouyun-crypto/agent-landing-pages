@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandArmor - Stop Social Media Brand Impersonation | Scam Ad Detection</title>
+<meta name="description" content="BrandArmor detects and removes scam ads and impersonation accounts targeting your brand on social media. AI-powered monitoring across Facebook, Instagram, LinkedIn, and Twitter.">
+<meta property="og:title" content="BrandArmor - Social Media Brand Impersonation Protection">
+<meta property="og:description" content="AI-powered detection of scam ads and impersonation accounts targeting your brand. Stop fraud before it reaches your customers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/brandarmor/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BrandArmor - Social Media Brand Impersonation Protection">
+<meta name="twitter:description" content="AI-powered detection of scam ads and impersonation accounts targeting your brand. Stop fraud before it reaches your customers.">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #08090a;
+  color: #f7f8f8;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Navigation */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(8, 9, 10, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(247, 248, 248, 0.06);
+}
+nav .container {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+nav .logo {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.3px;
+  color: #f7f8f8;
+}
+nav .logo span { color: #5e6ad2; }
+nav .nav-links { display: flex; align-items: center; gap: 32px; }
+nav .nav-links a {
+  font-size: 14px; font-weight: 500; color: rgba(247, 248, 248, 0.6);
+  transition: color 0.2s;
+  letter-spacing: 0.2px;
+}
+nav .nav-links a:hover { color: #f7f8f8; }
+nav .cta-btn {
+  display: inline-block; padding: 10px 24px;
+  background: #5e6ad2; color: #fff; border-radius: 8px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.3px;
+  transition: background 0.2s;
+}
+nav .cta-btn:hover { background: #7170ff; }
+
+/* Hero */
+.hero {
+  padding: 160px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(94, 106, 210, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero h1 {
+  font-size: 56px; font-weight: 700; letter-spacing: -1px;
+  line-height: 1.15; margin-bottom: 24px;
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.hero h1 .accent {
+  background: linear-gradient(135deg, #5e6ad2, #7170ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 18px; color: rgba(247, 248, 248, 0.6);
+  max-width: 600px; margin: 0 auto 40px;
+  letter-spacing: 0.1px;
+}
+.hero .ctas { display: flex; gap: 16px; justify-content: center; }
+.hero .btn-primary {
+  display: inline-block; padding: 14px 32px;
+  background: #5e6ad2; color: #fff; border-radius: 10px;
+  font-size: 16px; font-weight: 600; letter-spacing: 0.3px;
+  transition: background 0.2s; cursor: pointer;
+}
+.hero .btn-primary:hover { background: #7170ff; }
+.hero .btn-ghost {
+  display: inline-block; padding: 14px 32px;
+  border: 1px solid rgba(247, 248, 248, 0.15); border-radius: 10px;
+  color: rgba(247, 248, 248, 0.8); font-size: 16px; font-weight: 500;
+  letter-spacing: 0.3px; transition: border-color 0.2s;
+}
+.hero .btn-ghost:hover { border-color: rgba(247, 248, 248, 0.3); }
+.hero .stats {
+  display: flex; justify-content: center; gap: 48px;
+  margin-top: 64px;
+}
+.hero .stat-item { text-align: center; }
+.hero .stat-number {
+  font-size: 36px; font-weight: 700; letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+.hero .stat-label {
+  font-size: 14px; color: rgba(247, 248, 248, 0.4); letter-spacing: 0.2px;
+}
+.hero .stat-badge {
+  display: inline-block; margin-top: 6px;
+  padding: 3px 10px; border-radius: 4px;
+  background: rgba(94, 106, 210, 0.12);
+  color: #5e6ad2; font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
+}
+
+/* Section common */
+.section { padding: 100px 0; }
+.section-label {
+  font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  color: #5e6ad2; margin-bottom: 12px; text-align: center;
+}
+.section-title {
+  font-size: 36px; font-weight: 700; letter-spacing: -0.5px;
+  text-align: center; margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 16px; color: rgba(247, 248, 248, 0.5);
+  text-align: center; max-width: 560px; margin: 0 auto 64px;
+  letter-spacing: 0.1px;
+}
+
+/* Pain section */
+.pain-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.pain-card {
+  background: #0f1011; border: 1px solid rgba(247, 248, 248, 0.06);
+  border-radius: 12px; padding: 40px 32px;
+}
+.pain-card .icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(94, 106, 210, 0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 18px;
+}
+.pain-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 12px; }
+.pain-card p { font-size: 14px; color: rgba(247, 248, 248, 0.55); line-height: 1.7; letter-spacing: 0.1px; }
+.pain-card .data-callout {
+  display: inline-block; margin-top: 16px; padding: 6px 14px;
+  background: rgba(255, 107, 107, 0.08); border-radius: 6px;
+  font-size: 13px; font-weight: 600; color: #ff6b6b; letter-spacing: 0.2px;
+}
+
+/* Features */
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.feature-card {
+  background: #0f1011; border: 1px solid rgba(247, 248, 248, 0.06);
+  border-radius: 12px; padding: 40px 32px;
+}
+.feature-card .num {
+  font-size: 13px; font-weight: 700; color: rgba(94, 106, 210, 0.5);
+  letter-spacing: 1px; margin-bottom: 16px;
+}
+.feature-card .icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(94, 106, 210, 0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 18px;
+}
+.feature-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 12px; }
+.feature-card > p { font-size: 14px; color: rgba(247, 248, 248, 0.55); line-height: 1.7; letter-spacing: 0.1px; }
+.feature-card .practice-box {
+  margin-top: 20px; padding: 16px; border-radius: 8px;
+  background: rgba(247, 248, 248, 0.03); border: 1px solid rgba(247, 248, 248, 0.05);
+}
+.feature-card .practice-box .label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px;
+  color: #5e6ad2; margin-bottom: 8px;
+}
+.feature-card .practice-box p {
+  font-size: 13px; color: rgba(247, 248, 248, 0.5); line-height: 1.6;
+}
+
+/* How It Works */
+.how-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.how-step {
+  text-align: center; padding: 48px 24px;
+}
+.how-step .circle {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(94, 106, 210, 0.12);
+  border: 1px solid rgba(94, 106, 210, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 20px; font-weight: 700; color: #5e6ad2;
+}
+.how-step h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.2px; }
+.how-step p { font-size: 14px; color: rgba(247, 248, 248, 0.55); line-height: 1.7; max-width: 300px; margin: 0 auto; letter-spacing: 0.1px; }
+
+/* Use Cases */
+.usecases-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.usecase-card {
+  background: #0f1011; border: 1px solid rgba(247, 248, 248, 0.06);
+  border-radius: 12px; padding: 36px 32px;
+}
+.usecase-card .icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(94, 106, 210, 0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px; font-size: 18px;
+}
+.usecase-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.1px; }
+.usecase-card p { font-size: 14px; color: rgba(247, 248, 248, 0.55); line-height: 1.7; letter-spacing: 0.1px; }
+
+/* Testimonial */
+.testimonial {
+  text-align: center; padding: 80px 0;
+  max-width: 720px; margin: 0 auto;
+}
+.testimonial blockquote {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.2px;
+  line-height: 1.6; color: rgba(247, 248, 248, 0.85);
+  margin-bottom: 32px;
+}
+.testimonial .author {
+  font-size: 14px; font-weight: 600; letter-spacing: 0.2px;
+  color: #5e6ad2;
+}
+.testimonial .role { font-size: 13px; color: rgba(247, 248, 248, 0.4); margin-top: 4px; }
+
+/* CTA section */
+.cta-section {
+  padding: 100px 0; text-align: center;
+  background: radial-gradient(ellipse at center, rgba(94, 106, 210, 0.06) 0%, transparent 70%);
+}
+.cta-section h2 {
+  font-size: 36px; font-weight: 700; letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.cta-section p {
+  font-size: 16px; color: rgba(247, 248, 248, 0.5);
+  max-width: 480px; margin: 0 auto 40px; letter-spacing: 0.1px;
+}
+.cta-form { display: flex; gap: 12px; justify-content: center; max-width: 480px; margin: 0 auto; }
+.cta-form input {
+  flex: 1; padding: 12px 16px; border-radius: 10px;
+  background: #191a1b; border: 1px solid rgba(247, 248, 248, 0.1);
+  color: #f7f8f8; font-size: 15px; font-family: inherit;
+  outline: none; transition: border-color 0.2s;
+}
+.cta-form input:focus { border-color: #5e6ad2; }
+.cta-form input::placeholder { color: rgba(247, 248, 248, 0.3); }
+.cta-form button {
+  padding: 12px 28px; background: #5e6ad2; color: #fff;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.3px;
+  cursor: pointer; transition: background 0.2s; font-family: inherit;
+}
+.cta-form button:hover { background: #7170ff; }
+.cta-success {
+  display: none; padding: 16px 24px;
+  background: rgba(94, 106, 210, 0.1); border: 1px solid rgba(94, 106, 210, 0.2);
+  border-radius: 10px; max-width: 480px; margin: 0 auto;
+  font-size: 15px; color: rgba(247, 248, 248, 0.8);
+}
+
+/* Footer */
+footer {
+  padding: 48px 0; border-top: 1px solid rgba(247, 248, 248, 0.06);
+}
+footer .container {
+  display: flex; align-items: center; justify-content: space-between;
+}
+footer .copy { font-size: 13px; color: rgba(247, 248, 248, 0.3); }
+footer .links { display: flex; gap: 24px; }
+footer .links a {
+  font-size: 13px; color: rgba(247, 248, 248, 0.4);
+  transition: color 0.2s;
+}
+footer .links a:hover { color: rgba(247, 248, 248, 0.7); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 36px; }
+  .hero .stats { gap: 24px; flex-wrap: wrap; }
+  .pain-grid, .features-grid, .how-grid { grid-template-columns: 1fr; }
+  .usecases-grid { grid-template-columns: 1fr; }
+  nav .nav-links { display: none; }
+  .cta-form { flex-direction: column; }
+  .hero .ctas { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Brand<span>Armor</span></div>
+    <div class="nav-links">
+      <a href="#pain">Problem</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#waitlist" class="cta-btn">Join Waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Stop scammers from <span class="accent">impersonating</span> your brand on social media</h1>
+    <p>BrandArmor monitors Facebook, Instagram, LinkedIn, and Twitter for scam ads and impersonation accounts targeting your brand. Get notified in real-time and automate takedowns before your customers get hurt.</p>
+    <div class="ctas">
+      <a href="#waitlist" class="btn-primary">Join Waitlist</a>
+      <a href="#features" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-number">87%</div>
+        <div class="stat-label">of brands find out about impersonation scams from customer complaints</div>
+        <div class="stat-badge">Gartner 2025</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3.2B</div>
+        <div class="stat-label">fake ads removed by Meta in 2025, yet new ones appear daily</div>
+        <div class="stat-badge">Meta Transparency</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">64%</div>
+        <div class="stat-label">of scam victims say they trusted the ad because it looked like a known brand</div>
+        <div class="stat-badge">FTC Report</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pain" class="section">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">Scammers are impersonating your brand right now</h2>
+    <p class="section-sub">AI-generated ad creatives and phishing pages make it trivial to clone any brand on social platforms.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">&#9888;</div>
+        <h3>You discover scams through support tickets</h3>
+        <p>Most brands learn about impersonation campaigns only after customers call in confused about fake giveaways, fraudulent discounts, or phishing links that look exactly like official brand communications.</p>
+        <div class="data-callout">Meta sued by US Virgin Islands for allowing scam adverts to proliferate at scale</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">&#9888;</div>
+        <h3>Platforms resist policing their own ads</h3>
+        <p>Reuters investigation revealed Meta created an internal playbook to fend off pressure to crack down on scammers. Social platforms have little financial incentive to proactively identify and remove scam content.</p>
+        <div class="data-callout">Meta internal playbook documented by Reuters, Dec 2025</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">&#9888;</div>
+        <h3>Manual monitoring cannot keep up</h3>
+        <p>With millions of ads served daily across four major platforms, brand safety teams cannot manually audit every post. Scammers cycle through accounts faster than human teams can flag and report them.</p>
+        <div class="data-callout">Instagram chief: AI-generated content so ubiquitous it is outpacing detection</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="section" style="background: #0b0c0d;">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything you need to protect your brand</h2>
+    <p class="section-sub">AI-powered detection, monitoring, and automated remediation across all major social platforms.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="num">01</div>
+        <div class="icon">&#128269;</div>
+        <h3>Cross-Platform Scam Monitoring</h3>
+        <p>Continuously scan Facebook, Instagram, LinkedIn, Twitter, and TikTok for ads, posts, and accounts impersonating your brand. Our AI detects cloned logos, phishing patterns, and fake giveaway templates in real-time.</p>
+        <div class="practice-box">
+          <div class="label">In practice</div>
+          <p>A fintech brand discovered 34 fake loan-offer ads on Instagram within the first hour of monitoring. BrandArmor flagged all of them with screenshots and platform URLs.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="num">02</div>
+        <div class="icon">&#128200;</div>
+        <h3>AI-Powered Similarity Detection</h3>
+        <p>Vision AI compares brand assets (logos, color schemes, product images) against active social ads. NLP analyzes ad copy for scam indicators including unrealistic promises, urgency language, and mismatched domain links.</p>
+        <div class="practice-box">
+          <div class="label">In practice</div>
+          <p>An e-commerce brand detected a deepfake video ad featuring their CEO offering 90% off sitewide. BrandArmor identified it within 12 minutes of publication.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="num">03</div>
+        <div class="icon">&#9881;</div>
+        <h3>Automated Takedown Workflow</h3>
+        <p>Generate prefilled legal takedown requests for each platform's reporting system with one click. Track report status, escalate unresolved cases, and maintain an audit trail of every action taken.</p>
+        <div class="practice-box">
+          <div class="label">In practice</div>
+          <p>A SaaS company reduced scam ad takedown time from 3 days to under 4 hours using BrandArmor's automated reporting pipeline across 4 platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three steps to brand protection</h2>
+    <p class="section-sub">From setup to first detection in under 10 minutes.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="circle">1</div>
+        <h3>Connect your brand</h3>
+        <p>Provide your brand name, domain, logo assets, and social media handles. BrandArmor indexes your brand identity across all target platforms.</p>
+      </div>
+      <div class="how-step">
+        <div class="circle">2</div>
+        <h3>AI scans the surface</h3>
+        <p>Our detection engine continuously crawls social ad libraries, public pages, and sponsored content feeds for visual and textual matches to your brand.</p>
+      </div>
+      <div class="how-step">
+        <div class="circle">3</div>
+        <h3>Alert and act</h3>
+        <p>Receive real-time alerts with evidence packages. One click generates a takedown request. Track every case through resolution in your dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usecases" class="section" style="background: #0b0c0d;">
+  <div class="container">
+    <div class="section-label">Use Cases</div>
+    <h2 class="section-title">Who needs BrandArmor</h2>
+    <p class="section-sub">Brand safety teams in regulated and consumer-facing industries face the highest impersonation risk.</p>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <div class="icon">&#127974;</div>
+        <h3>Fintech and Banking</h3>
+        <p>Scammers run fake loan ads and phishing campaigns impersonating financial brands. Regulators including the FTC hold brands accountable for impersonation fraud even when they are the victim.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="icon">&#127760;</div>
+        <h3>E-commerce and Retail</h3>
+        <p>Fake giveaway ads offering unrealistic discounts on popular products drive traffic to credential harvesting pages. Each incident erodes hard-won customer trust.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="icon">&#128187;</div>
+        <h3>SaaS and Technology</h3>
+        <p>Scammers clone landing pages of popular SaaS tools and run ads offering fake enterprise trials. Unsuspecting IT buyers expose their organizations to supply chain attacks.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="icon">&#127919;</div>
+        <h3>Digital Agencies</h3>
+        <p>Agencies managing multiple brand accounts need centralized monitoring across client portfolios. BrandArmor provides multi-brand dashboards and per-client reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="testimonial">
+      <blockquote>"We spent two hours a day manually searching for scam ads on Meta platforms. BrandArmor reduced that to zero. It found 12 impersonation accounts in the first week that we had completely missed."</blockquote>
+      <div class="author">Sarah Chen</div>
+      <div class="role">Brand Safety Lead, PayFlow (Fintech, 120 employees)</div>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist" class="cta-section">
+  <div class="container">
+    <h2>Get early access to BrandArmor</h2>
+    <p>Join the waitlist. We will notify you when BrandArmor is ready for your brand.</p>
+    <div class="cta-form" id="waitlist-form">
+      <input type="email" id="email-input" placeholder="you@company.com" required>
+      <button onclick="joinWaitlist()">Join Waitlist</button>
+    </div>
+    <div class="cta-success" id="waitlist-success">
+      You have been added to the BrandArmor waitlist. We will be in touch.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="copy">&copy; 2026 BrandArmor. All rights reserved.</div>
+    <div class="links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const slug = 'brandarmor';
+
+function joinWaitlist() {
+  var input = document.getElementById('email-input');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  var existing = JSON.parse(localStorage.getItem(slug + '_waitlist_emails') || '[]');
+  existing.push({
+    email: email,
+    timestamp: new Date().toISOString(),
+    page: slug
+  });
+  localStorage.setItem(slug + '_waitlist_emails', JSON.stringify(existing));
+
+  fetch('http://localhost:9090/api/waitlist/' + slug, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+
+  document.getElementById('waitlist-form').style.display = 'none';
+  document.getElementById('waitlist-success').style.display = 'block';
+}
+</script>
+
+<img src="http://localhost:9090/track/brandarmor.gif" width="1" height="1" alt="" />
+
+</body>
+</html>
