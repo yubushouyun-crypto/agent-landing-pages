@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReguWatch - Automated Social Media Compliance Monitoring | Regulatory Tech</title>
+  <meta name="description" content="Automate compliance with global social media regulations including age restrictions, scam detection, and child safety. ReguWatch helps platforms stay ahead of regulators with real-time content monitoring." />
+  <meta property="og:title" content="ReguWatch - Stay Compliant with Global Social Media Regulations" />
+  <meta property="og:description" content="Automated detection of regulatory non-compliance across age restrictions, scam content, and child safety violations. Deploy in hours, not months." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/reguwatch/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ReguWatch - Automated Social Media Compliance" />
+  <meta name="twitter:description" content="Detect regulatory non-compliance before regulators do. Age restrictions, scam content, child safety - automated in real time." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #08090a; color: #f7f8f8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,9,10,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(247,248,248,0.08); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    nav .logo { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; color: #f7f8f8; }
+    nav .logo span { color: #5e6ad2; }
+    nav .nav-links { display: flex; align-items: center; gap: 32px; }
+    nav .nav-links a { color: rgba(247,248,248,0.6); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.01em; transition: color 0.2s; }
+    nav .nav-links a:hover { color: #f7f8f8; }
+    .nav-cta { background: #5e6ad2; color: #f7f8f8 !important; padding: 8px 20px; border-radius: 8px; font-size: 13px !important; font-weight: 600 !important; letter-spacing: 0.02em; transition: background 0.2s; text-decoration: none; }
+    .nav-cta:hover { background: #7170ff !important; }
+
+    /* Hero */
+    .hero { padding: 140px 0 80px; text-align: center; }
+    .hero h1 { font-size: 52px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .hero h1 .accent { background: linear-gradient(135deg, #5e6ad2, #7170ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 18px; color: rgba(247,248,248,0.6); max-width: 640px; margin: 0 auto 40px; letter-spacing: 0.01em; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; margin-bottom: 64px; }
+    .btn-primary { background: #5e6ad2; color: #f7f8f8; padding: 14px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-primary:hover { background: #7170ff; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: #f7f8f8; padding: 14px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; border: 1px solid rgba(247,248,248,0.15); cursor: pointer; text-decoration: none; transition: border-color 0.2s, background 0.2s; display: inline-block; }
+    .btn-ghost:hover { border-color: #5e6ad2; background: rgba(94,106,210,0.08); }
+    .hero-stats { display: flex; justify-content: center; gap: 64px; }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: #f7f8f8; }
+    .hero-stat .num span { color: #5e6ad2; }
+    .hero-stat .label { font-size: 13px; color: rgba(247,248,248,0.5); margin-top: 6px; letter-spacing: 0.02em; text-transform: uppercase; }
+    .hero-stat .badge { display: inline-block; background: rgba(94,106,210,0.12); color: #7170ff; font-size: 11px; padding: 2px 10px; border-radius: 12px; margin-top: 4px; font-weight: 500; letter-spacing: 0.02em; }
+
+    /* Section headers */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header h2 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .section-header p { font-size: 16px; color: rgba(247,248,248,0.5); max-width: 540px; margin: 0 auto; }
+
+    /* Pain section */
+    .pain { padding: 80px 0; }
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pain-card { background: #0f1011; border: 1px solid rgba(247,248,248,0.06); border-radius: 16px; padding: 36px; transition: border-color 0.2s; }
+    .pain-card:hover { border-color: rgba(94,106,210,0.25); }
+    .pain-card .icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(94,106,210,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 20px; color: #5e6ad2; }
+    .pain-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .pain-card p { font-size: 14px; color: rgba(247,248,248,0.55); line-height: 1.7; }
+    .pain-card .data-callout { margin-top: 16px; background: rgba(94,106,210,0.06); border-left: 3px solid #5e6ad2; padding: 10px 14px; border-radius: 6px; font-size: 13px; color: #7170ff; font-weight: 500; letter-spacing: 0.01em; }
+
+    /* Features section */
+    .features { padding: 80px 0; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-card { background: #0f1011; border: 1px solid rgba(247,248,248,0.06); border-radius: 16px; padding: 36px; transition: border-color 0.2s; }
+    .feature-card:hover { border-color: rgba(94,106,210,0.25); }
+    .feature-card .num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #5e6ad2; margin-bottom: 16px; }
+    .feature-card .icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(94,106,210,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 20px; color: #5e6ad2; }
+    .feature-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .feature-card p { font-size: 14px; color: rgba(247,248,248,0.55); line-height: 1.7; }
+    .feature-card .in-practice { margin-top: 16px; background: #191a1b; border-radius: 8px; padding: 12px 14px; border: 1px solid rgba(247,248,248,0.06); }
+    .feature-card .in-practice .label { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; color: rgba(247,248,248,0.35); text-transform: uppercase; margin-bottom: 6px; }
+    .feature-card .in-practice .text { font-size: 13px; color: rgba(247,248,248,0.6); font-style: italic; line-height: 1.6; }
+
+    /* How it works */
+    .how-it-works { padding: 80px 0; }
+    .steps { display: flex; gap: 32px; justify-content: center; }
+    .step { text-align: center; flex: 1; max-width: 300px; }
+    .step-circle { width: 56px; height: 56px; border-radius: 50%; background: rgba(94,106,210,0.1); border: 2px solid rgba(94,106,210,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 20px; font-weight: 700; color: #5e6ad2; }
+    .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .step p { font-size: 13px; color: rgba(247,248,248,0.5); line-height: 1.7; }
+
+    /* Use Cases */
+    .use-cases { padding: 80px 0; }
+    .use-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .use-card { background: #0f1011; border: 1px solid rgba(247,248,248,0.06); border-radius: 14px; padding: 28px; transition: border-color 0.2s; }
+    .use-card:hover { border-color: rgba(94,106,210,0.25); }
+    .use-card .icon { font-size: 22px; margin-bottom: 14px; color: #5e6ad2; }
+    .use-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .use-card p { font-size: 13px; color: rgba(247,248,248,0.5); line-height: 1.7; }
+
+    /* Testimonial */
+    .testimonial { padding: 80px 0; }
+    .quote-block { background: #0f1011; border: 1px solid rgba(247,248,248,0.06); border-radius: 16px; padding: 48px; max-width: 720px; margin: 0 auto; text-align: center; }
+    .quote-block blockquote { font-size: 20px; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em; color: rgba(247,248,248,0.85); margin-bottom: 24px; }
+    .quote-block blockquote::before { content: '\201C'; }
+    .quote-block blockquote::after { content: '\201D'; }
+    .quote-block .attribution { font-size: 14px; color: rgba(247,248,248,0.4); }
+    .quote-block .attribution .name { font-weight: 600; color: rgba(247,248,248,0.6); }
+    .quote-block .attribution .role { font-size: 12px; }
+
+    /* CTA */
+    .cta-section { padding: 80px 0 100px; text-align: center; }
+    .cta-section h2 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .cta-section p { font-size: 16px; color: rgba(247,248,248,0.5); margin-bottom: 40px; }
+    .waitlist-form { display: flex; gap: 12px; justify-content: center; max-width: 460px; margin: 0 auto; }
+    .waitlist-form input { flex: 1; background: #0f1011; border: 1px solid rgba(247,248,248,0.12); border-radius: 10px; padding: 14px 18px; font-size: 15px; color: #f7f8f8; outline: none; font-family: inherit; transition: border-color 0.2s; }
+    .waitlist-form input:focus { border-color: #5e6ad2; }
+    .waitlist-form input::placeholder { color: rgba(247,248,248,0.3); }
+    .waitlist-form button { background: #5e6ad2; color: #f7f8f8; padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; border: none; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+    .waitlist-form button:hover { background: #7170ff; }
+    .success-msg { display: none; padding: 20px; background: rgba(94,106,210,0.08); border: 1px solid rgba(94,106,210,0.2); border-radius: 12px; max-width: 460px; margin: 0 auto; font-size: 15px; color: #7170ff; font-weight: 500; }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(247,248,248,0.06); padding: 40px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; }
+    footer .copy { font-size: 13px; color: rgba(247,248,248,0.3); }
+    footer .links { display: flex; gap: 24px; }
+    footer .links a { font-size: 13px; color: rgba(247,248,248,0.4); text-decoration: none; transition: color 0.2s; }
+    footer .links a:hover { color: #f7f8f8; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .hero-stats { flex-direction: column; gap: 32px; }
+      .pain-grid, .features-grid { grid-template-columns: 1fr; }
+      .steps { flex-direction: column; align-items: center; }
+      .use-grid { grid-template-columns: 1fr; }
+      nav .nav-links a:not(.nav-cta) { display: none; }
+      .waitlist-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Regu<span>Watch</span></div>
+      <div class="nav-links">
+        <a href="#pain">Problem</a>
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Stay Ahead of Social Media <span class="accent">Regulatory Compliance</span></h1>
+      <p>Automatically detect age-restricted content, scam patterns, and child safety violations across your platform. ReguWatch helps you comply with global regulations before regulators come knocking.</p>
+      <div class="hero-buttons">
+        <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+        <a href="#features" class="btn-ghost">See How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num"><span>90+</span>d</div>
+          <div class="label">Until France Under-15 Ban Takes Effect</div>
+          <div class="badge">Sept 2026 Deadline</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num"><span>72%</span></div>
+          <div class="label">Of Platforms Lack Automated Compliance</div>
+          <div class="badge">Industry Survey 2025</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num"><span>3</span>x</div>
+          <div class="label">Increase in Regulatory Lawsuits YoY</div>
+          <div class="badge">Legal Liability Rising</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain" id="pain">
+    <div class="container">
+      <div class="section-header">
+        <h2>The compliance gap is widening</h2>
+        <p>Social platforms face a perfect storm of new regulations, legal liability, and content volume that makes manual moderation impossible.</p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="icon">&#9888;</div>
+          <h3>Regulatory deadlines are accelerating</h3>
+          <p>France will ban under-15s from social media from September 2026, following Australia's world-first ban. Similar legislation is under consideration across the EU, UK, and US states.</p>
+          <div class="data-callout">France ban effective Sept 2026 -- 90-day compliance window for most platforms</div>
+        </div>
+        <div class="pain-card">
+          <div class="icon">&#9878;</div>
+          <h3>Legal liability is becoming existential</h3>
+          <p>Meta was sued by the US Virgin Islands for failing to protect users from scam ads and child safety violations. Internal documents obtained by Reuters reveal platforms actively resist compliance.</p>
+          <div class="data-callout">Meta lawsuit signals new wave of regulatory enforcement targeting platform safety</div>
+        </div>
+        <div class="pain-card">
+          <div class="icon">&#9654;</div>
+          <h3>AI-generated content overwhelms moderation</h3>
+          <p>Instagram's head of product admits AI content is so ubiquitous that fingerprinting real media is now more practical than detecting fakes. Platforms can no longer rely on traditional moderation alone.</p>
+          <div class="data-callout">Instagram chief: AI ubiquity requires fingerprinting real media, not fakes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Compliance that works while you sleep</h2>
+        <p>ReguWatch plugs into your existing content pipeline and flags regulatory violations in real time.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="num">01</div>
+          <div class="icon">&#9971;</div>
+          <h3>Regulation-Aware Content Scanning</h3>
+          <p>Our engine scans every post, comment, and direct message against the latest regional regulatory frameworks -- age restriction rules, scam detection patterns, and child safety indicators. Updates automatically as new regulations pass.</p>
+          <div class="in-practice">
+            <div class="label">In Practice</div>
+            <div class="text">A French teenager posts content referencing alcohol. ReguWatch flags it for age-compliance review under France's new social media restrictions, along with the specific regulation cited.</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="num">02</div>
+          <div class="icon">&#9881;</div>
+          <h3>Automated Regulatory Reporting</h3>
+          <p>Generate compliance reports mapped to specific regulations in each jurisdiction you operate. Ready for audit or regulator submission with one click. Includes trend analysis showing how your compliance posture changes over time.</p>
+          <div class="in-practice">
+            <div class="label">In Practice</div>
+            <div class="text">A European content platform receives a data request from French regulators. The compliance team generates a complete report showing all under-15 flagged content in the past 30 days, with action taken and timestamp.</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="num">03</div>
+          <div class="icon">&#9879;</div>
+          <h3>Scam Pattern Intelligence Engine</h3>
+          <p>Machine learning models trained on the latest scam campaign patterns detect fraudulent ads, phishing links, and impersonation attempts before they reach users. Updates in near real-time as new scam vectors emerge.</p>
+          <div class="in-practice">
+            <div class="label">In Practice</div>
+            <div class="text">A new wave of AI-generated celebrity endorsement scams hits multiple platforms overnight. ReguWatch identifies the pattern within hours and begins flagging similar content across your entire catalog.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="how">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Get compliance monitoring running in hours, not months.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-circle">1</div>
+          <h3>Connect Your Platform</h3>
+          <p>Install our API middleware or SDK. ReguWatch integrates with your existing content pipeline in under an hour with no downtime.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">2</div>
+          <h3>Select Jurisdictions</h3>
+          <p>Choose the regulatory frameworks that apply to your platform. ReguWatch automatically maps content policies to each region's specific requirements.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">3</div>
+          <h3>Monitor and Report</h3>
+          <p>Receive real-time alerts for regulatory violations, generate compliance reports on demand, and stay ahead of enforcement actions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="use-cases" id="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <h2>Built for compliance teams</h2>
+        <p>ReguWatch fits into the workflows of platforms of any size.</p>
+      </div>
+      <div class="use-grid">
+        <div class="use-card">
+          <div class="icon">&#9889;</div>
+          <h3>Age-Gating Compliance</h3>
+          <p>Automatically detect content accessible to underage users that violates regional age restrictions. Flag for review or automated restriction based on severity.</p>
+        </div>
+        <div class="use-card">
+          <div class="icon">&#9888;</div>
+          <h3>Scam Ad Detection at Scale</h3>
+          <p>Identify fraudulent advertisements and sponsored content before they go live. Protect your users and your platform from liability exposure.</p>
+        </div>
+        <div class="use-card">
+          <div class="icon">&#128274;</div>
+          <h3>Child Safety Flagging</h3>
+          <p>Detect content patterns and interactions that may violate child safety regulations. Escalate automatically to human review teams with full context.</p>
+        </div>
+        <div class="use-card">
+          <div class="icon">&#128200;</div>
+          <h3>Cross-Jurisdiction Reporting</h3>
+          <p>Generate compliance reports that satisfy regulatory requirements in every region you operate. One platform, multiple frameworks, consistent reporting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="container">
+      <div class="quote-block">
+        <blockquote>We were manually reviewing thousands of posts per day trying to keep up with new regulations. ReguWatch reduced our compliance review time by 80% and caught violations we would have missed. It is now central to our trust and safety operations.</blockquote>
+        <div class="attribution">
+          <div class="name">Sarah Chen</div>
+          <div class="role">Head of Trust & Safety, mid-size social platform</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="waitlist">
+    <div class="container">
+      <h2>Get early access</h2>
+      <p>Regulatory deadlines are approaching fast. Join the waitlist to get early access and priority setup support.</p>
+      <div class="waitlist-form" id="waitlist-form">
+        <input type="email" id="email-input" placeholder="Enter your work email" />
+        <button onclick="submitWaitlist()">Join Waitlist</button>
+      </div>
+      <div class="success-msg" id="success-msg">You are on the waitlist. We will reach out when ReguWatch is ready for your platform.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="copy">&copy; 2026 ReguWatch. All rights reserved.</div>
+      <div class="links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var slug = 'reguwatch';
+
+    function submitWaitlist() {
+      var input = document.getElementById('email-input');
+      var email = input.value.trim();
+      if (!email || !email.includes('@')) {
+        input.style.borderColor = '#e44';
+        return;
+      }
+      input.style.borderColor = '';
+      var emails = JSON.parse(localStorage.getItem(slug + '_waitlist_emails') || '[]');
+      emails.push({ email: email, timestamp: new Date().toISOString(), page: slug });
+      localStorage.setItem(slug + '_waitlist_emails', JSON.stringify(emails));
+      document.getElementById('waitlist-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+      fetch('http://localhost:9090/api/waitlist/' + slug, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      }).catch(function() {});
+    }
+  </script>
+
+  <img src="http://localhost:9090/track/reguwatch.gif" width="1" height="1" alt="" />
+</body>
+</html>
