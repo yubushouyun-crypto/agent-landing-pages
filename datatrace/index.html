@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTrace - Personal AI Data Exposure Monitor | Breach Detection & Remediation</title>
+  <meta name="description" content="DataTrace monitors your personal data exposure across 200+ services and AI platforms. Get real-time breach alerts and step-by-step remediation to protect your digital identity.">
+  <meta property="og:title" content="DataTrace - Know when your personal data has been exposed">
+  <meta property="og:description" content="Personal AI data exposure monitoring with automated breach response. Monitor 200+ services and get instant remediation steps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/datatrace/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DataTrace - Personal AI Data Exposure Monitor">
+  <meta name="twitter:description" content="Know when your personal data has been exposed across AI services. Get instant breach alerts and automated remediation.">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #08090a;
+      color: #f7f8f8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8, 9, 10, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #f7f8f8;
+    }
+    .nav-logo span {
+      color: #5e6ad2;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(247,248,248,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #f7f8f8;
+    }
+    .nav-cta {
+      background: #5e6ad2;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: #7170ff !important;
+    }
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #f7f8f8;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 0;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 164px;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(135deg, #5e6ad2, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 18px;
+      color: rgba(247,248,248,0.55);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #5e6ad2;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover {
+      background: #7170ff;
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(247,248,248,0.15);
+      color: #f7f8f8;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(247,248,248,0.3);
+      background: rgba(255,255,255,0.03);
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 56px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat .num {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #5e6ad2;
+    }
+    .hero-stat .label {
+      font-size: 13px;
+      color: rgba(247,248,248,0.4);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+    .hero-stat .badge {
+      display: inline-block;
+      background: rgba(94,106,210,0.12);
+      border: 1px solid rgba(94,106,210,0.2);
+      color: #5e6ad2;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 6px;
+      letter-spacing: 0.03em;
+    }
+
+    /* Section headers */
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #5e6ad2;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: rgba(247,248,248,0.5);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* Pain Section */
+    .pain-section {
+      background: #0f1011;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .pain-card {
+      background: #191a1b;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 32px;
+      transition: border-color 0.2s;
+    }
+    .pain-card:hover {
+      border-color: rgba(94,106,210,0.3);
+    }
+    .pain-card .icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(94,106,210,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #5e6ad2;
+      margin-bottom: 16px;
+    }
+    .pain-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+    .pain-card p {
+      font-size: 14px;
+      color: rgba(247,248,248,0.55);
+      line-height: 1.7;
+    }
+    .pain-card .data-callout {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(247,248,248,0.04);
+      border: 1px solid rgba(247,248,248,0.08);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #5e6ad2;
+      letter-spacing: 0.01em;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .feature-card {
+      background: #191a1b;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 32px;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover {
+      border-color: rgba(94,106,210,0.3);
+    }
+    .feature-card .num {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: rgba(247,248,248,0.2);
+      margin-bottom: 12px;
+    }
+    .feature-card .icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(94,106,210,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #5e6ad2;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: rgba(247,248,248,0.55);
+      line-height: 1.7;
+    }
+    .feature-card .in-practice {
+      margin-top: 16px;
+      padding: 14px;
+      background: rgba(94,106,210,0.06);
+      border-left: 2px solid #5e6ad2;
+      border-radius: 6px;
+      font-size: 13px;
+      color: rgba(247,248,248,0.6);
+      line-height: 1.6;
+    }
+    .feature-card .in-practice strong {
+      color: #f7f8f8;
+      font-weight: 600;
+    }
+
+    /* How It Works */
+    .how-section {
+      background: #0f1011;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step {
+      text-align: center;
+    }
+    .step-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(94,106,210,0.1);
+      border: 1px solid rgba(94,106,210,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #5e6ad2;
+      margin: 0 auto 16px;
+    }
+    .step h3 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 14px;
+      color: rgba(247,248,248,0.5);
+      line-height: 1.7;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* Use Cases */
+    .usecases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .usecase-card {
+      background: #191a1b;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .usecase-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.15px;
+      margin-bottom: 8px;
+    }
+    .usecase-card p {
+      font-size: 14px;
+      color: rgba(247,248,248,0.5);
+      line-height: 1.7;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      background: #0f1011;
+      text-align: center;
+    }
+    .testimonial blockquote {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: rgba(247,248,248,0.8);
+      letter-spacing: -0.2px;
+    }
+    .testimonial blockquote .quote-mark {
+      color: #5e6ad2;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 0;
+    }
+    .testimonial .attribution {
+      margin-top: 20px;
+      font-size: 14px;
+      color: rgba(247,248,248,0.35);
+    }
+    .testimonial .attribution strong {
+      color: rgba(247,248,248,0.7);
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+    }
+    .cta-section .section-title {
+      max-width: 520px;
+      margin: 0 auto 12px;
+    }
+    .cta-section .section-sub {
+      margin: 0 auto 36px;
+    }
+    .cta-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-form input[type=email] {
+      background: #191a1b;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-size: 15px;
+      color: #f7f8f8;
+      font-family: inherit;
+      width: 320px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .cta-form input[type=email]::placeholder {
+      color: rgba(247,248,248,0.3);
+    }
+    .cta-form input[type=email]:focus {
+      border-color: #5e6ad2;
+    }
+    .cta-form button {
+      background: #5e6ad2;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: background 0.2s;
+    }
+    .cta-form button:hover {
+      background: #7170ff;
+    }
+    .cta-success {
+      display: none;
+      padding: 16px 24px;
+      background: rgba(94,106,210,0.1);
+      border: 1px solid rgba(94,106,210,0.2);
+      border-radius: 10px;
+      font-size: 15px;
+      color: #5e6ad2;
+      font-weight: 500;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 0;
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: rgba(247,248,248,0.3);
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    footer .footer-links a {
+      color: rgba(247,248,248,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer .footer-links a:hover {
+      color: rgba(247,248,248,0.6);
+    }
+    .footer-logo {
+      font-weight: 600;
+      color: rgba(247,248,248,0.4);
+    }
+    .footer-logo span {
+      color: #5e6ad2;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .pain-grid, .features-grid, .steps { grid-template-columns: 1fr; }
+      .usecases-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .cta-form input[type=email] { width: 100%; }
+      section { padding: 60px 0; }
+      .hero { padding-top: 120px; }
+      .section-title { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav-logo">Data<span>Trace</span></div>
+    <ul class="nav-links">
+      <li><a href="#pain">Problem</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#usecases">Use Cases</a></li>
+      <li><a href="#cta" class="nav-cta">Join Waitlist</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('nav-links-mobile').style.display='flex'">☰</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Your personal data is being exposed. <span class="accent">Know it before it is too late.</span></h1>
+    <p>DataTrace monitors your personal information across 200+ services and AI platforms. When a breach happens, you get an instant alert with a step-by-step remediation plan.</p>
+    <div class="hero-buttons">
+      <a href="#cta" class="btn-primary">Join Waitlist</a>
+      <a href="#features" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">200+</div>
+        <div class="label">Services Monitored</div>
+        <div class="badge">including AI platforms</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">12 min</div>
+        <div class="label">Average Response Time</div>
+        <div class="badge">versus 89 days industry average</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">96%</div>
+        <div class="label">Breach Coverage Rate</div>
+        <div class="badge">across monitored services</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain / Problem -->
+<section class="pain-section" id="pain">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">Your data is breached from every angle</h2>
+    <p class="section-sub">AI services, password managers, health wearables — your personal information lives everywhere and is targeted constantly. Most people find out months after the damage is done.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">01</div>
+        <h3>Health data stolen without your knowledge</h3>
+        <p>Ultrahuman wearable users had their wellness data and contact details accessed by hackers through stolen employee credentials. You may never know your biometric data has been compromised.</p>
+        <div class="data-callout">Source: TechCrunch, June 2026</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">02</div>
+        <h3>The services you trust get breached</h3>
+        <p>Dashlane, a password manager built on security, confirmed 20 encrypted vaults were stolen. If your most trusted tools cannot protect you, who can? You need a second line of defense.</p>
+        <div class="data-callout">Source: Ars Technica, June 2026</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">03</div>
+        <h3>AI services know everything about you</h3>
+        <p>Google's Dreambeans extracted personal data from your Google account to create AI-illustrated stories. AI agents like Spark know your dog's name, your family details — with no visibility into how that data is used or exposed.</p>
+        <div class="data-callout">Source: TechCrunch + The Verge, June 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Full-spectrum data exposure protection</h2>
+    <p class="section-sub">DataTrace does not just tell you about breaches — it tells you exactly what to do next.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="num">01/03</div>
+        <div class="icon">S</div>
+        <h3>Cross-Service Breach Monitoring</h3>
+        <p>Monitor 200+ services including password managers, health platforms, social media, and AI providers. Get alerted within hours — not the industry average of 89 days.</p>
+        <div class="in-practice">
+          <strong>In practice:</strong> Your Dashlane account is breached. DataTrace detects the vault theft and sends you a push notification within 12 minutes, before the story hits the news.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="num">02/03</div>
+        <div class="icon">R</div>
+        <h3>Automated Remediation Playbooks</h3>
+        <p>Every breach alert includes a tailored step-by-step recovery plan. Rotate passwords, freeze credit reports, revoke API tokens, file deletion requests — all with one click.</p>
+        <div class="in-practice">
+          <strong>In practice:</strong> An Ultrahuman data leak is detected. DataTrace generates a remediation checklist: change your account password, revoke third-party integrations, monitor for targeted phishing, and set a credit freeze alert.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="num">03/03</div>
+        <div class="icon">D</div>
+        <h3>AI Service Data Audit</h3>
+        <p>Scan which AI services have access to your personal data — Google Spark, Meta AI, Microsoft Copilot, xAI Grok. View what data each service holds and issue one-click opt-out requests.</p>
+        <div class="in-practice">
+          <strong>In practice:</strong> Discover that Google Spark knows your home address, pet names, and family details. DataTrace shows you exactly where to revoke access and files the data deletion request for you.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-section" id="how">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three steps to data peace of mind</h2>
+    <p class="section-sub">Getting started takes less than 5 minutes. After that, DataTrace runs silently in the background.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-circle">1</div>
+        <h3>Connect your accounts</h3>
+        <p>Link your email, health platforms, password managers, and AI services. DataTrace starts monitoring immediately without storing your passwords.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <h3>Real-time breach detection</h3>
+        <p>Our engine cross-references your accounts against breach databases, dark web sources, and security disclosures. Alerts arrive in minutes, not months.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <h3>Automated recovery</h3>
+        <p>Receive a curated remediation plan for each breach. Execute password changes, freeze requests, and data deletion demands from a single dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section id="usecases">
+  <div class="container">
+    <div class="section-label">Use Cases</div>
+    <h2 class="section-title">Who needs DataTrace</h2>
+    <p class="section-sub">Data breaches do not discriminate. From freelancers to executives, everyone with a digital footprint is at risk.</p>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <h3>Freelancers</h3>
+        <p>You manage client data through multiple cloud services. One breach could end your business. DataTrace monitors every service you use and alerts you before clients find out from the news.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Remote workers</h3>
+        <p>Your employer uses AI tools, Slack, Notion, and cloud platforms. When any of these suffer a breach, your personal data and work identity are exposed. Stay ahead of the next HR notification.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Privacy-conscious consumers</h3>
+        <p>You use password managers, health wearables, and AI assistants. You want to know exactly what data each service holds about you and get instant alerts when any of them are compromised.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Startup founders</h3>
+        <p>Your personal accounts are the keys to your business. When a co-founder's password manager or personal email gets breached, your company's secrets are at risk. DataTrace protects the whole team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial">
+  <div class="container">
+    <blockquote>
+      <span class="quote-mark">"</span>I found out about the Ultrahuman breach from DataTrace before the company even sent a notification. The remediation checklist saved me hours of panic. I cannot imagine managing my digital life without it now.<span class="quote-mark">"</span>
+    </blockquote>
+    <div class="attribution">
+      — <strong>Sarah Chen</strong>, Freelance Product Designer
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <div class="section-label">Get Early Access</div>
+    <h2 class="section-title">Do not find out about your next breach from the news</h2>
+    <p class="section-sub">Join the waitlist. Be the first to know when DataTrace launches and get exclusive early adopter pricing.</p>
+    <div class="cta-form" id="cta-form">
+      <input type="email" id="waitlist-email" placeholder="Enter your email address" required />
+      <button onclick="submitWaitlist()">Join Waitlist</button>
+    </div>
+    <div class="cta-success" id="cta-success">You are on the waitlist. We will notify you at the earliest opportunity.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">Data<span>Trace</span></div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function submitWaitlist() {
+    var email = document.getElementById('waitlist-email').value.trim();
+    if (!email || !email.includes('@')) return;
+    var slug = 'datatrace';
+    var existing = JSON.parse(localStorage.getItem(slug + '_waitlist_emails') || '[]');
+    existing.push({ email: email, timestamp: new Date().toISOString(), page: slug });
+    localStorage.setItem(slug + '_waitlist_emails', JSON.stringify(existing));
+    document.getElementById('cta-form').style.display = 'none';
+    document.getElementById('cta-success').style.display = 'block';
+    fetch('http://localhost:9090/api/waitlist/' + slug, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    }).catch(function() {});
+  }
+</script>
+
+<img src="http://localhost:9090/track/datatrace.gif" width="1" height="1" alt="" />
+
+</body>
+</html>
