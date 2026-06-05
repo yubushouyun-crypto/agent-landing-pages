@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlantIQ - AI-powered manufacturing operations for small factories | Industrial AI Platform</title>
+<meta name="description" content="PlantIQ brings AI-powered production monitoring, predictive maintenance, and knowledge capture to small and medium manufacturers. No data science team required. Start optimizing your factory floor in hours, not months.">
+<meta property="og:title" content="PlantIQ - AI-Powered Manufacturing Operations Platform">
+<meta property="og:description" content="Transform your factory floor with AI. Monitor production, predict downtime, and capture critical knowledge without a data science team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/plantiq/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PlantIQ - AI-Powered Manufacturing Operations Platform">
+<meta name="twitter:description" content="Transform your factory floor with AI. Monitor, predict, and optimize production without hiring data scientists.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #08090a; color: #f7f8f8; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Navigation */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,9,10,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.nav-logo { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; color: #f7f8f8; }
+.nav-logo span { color: #5e6ad2; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { font-size: 14px; font-weight: 500; color: rgba(247,248,248,0.6); letter-spacing: 0.01em; transition: color 0.2s; }
+.nav-links a:hover { color: #f7f8f8; }
+.nav-cta { display: inline-flex; align-items: center; background: #5e6ad2; color: #fff; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 8px; letter-spacing: 0.01em; transition: background 0.2s; border: none; cursor: pointer; }
+.nav-cta:hover { background: #7170ff; }
+.mobile-menu-btn { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+.mobile-menu-btn span { display: block; width: 20px; height: 2px; background: rgba(247,248,248,0.6); border-radius: 1px; }
+
+/* Hero */
+.hero { padding: 160px 0 100px; text-align: center; }
+.hero h1 { font-size: clamp(36px, 5.5vw, 64px); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; }
+.hero h1 .accent { background: linear-gradient(135deg, #5e6ad2, #7170ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero p { font-size: 18px; color: rgba(247,248,248,0.55); max-width: 640px; margin: 0 auto 40px; line-height: 1.7; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 64px; }
+.btn-primary { display: inline-flex; align-items: center; background: #5e6ad2; color: #fff; font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 10px; letter-spacing: 0.01em; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; }
+.btn-primary:hover { background: #7170ff; transform: translateY(-1px); }
+.btn-ghost { display: inline-flex; align-items: center; background: transparent; color: rgba(247,248,248,0.8); font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); letter-spacing: 0.01em; transition: border-color 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: #f7f8f8; }
+.hero-stats { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.hero-stat { text-align: center; }
+.hero-stat-value { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; color: #f7f8f8; margin-bottom: 4px; }
+.hero-stat-label { font-size: 13px; font-weight: 500; color: rgba(247,248,248,0.4); letter-spacing: 0.03em; text-transform: uppercase; }
+.hero-stat-badge { display: inline-block; background: rgba(94,106,210,0.12); color: #5e6ad2; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.02em; margin-top: 4px; }
+
+/* Section */
+section { padding: 100px 0; }
+.section-label { font-size: 13px; font-weight: 600; color: #5e6ad2; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-size: clamp(28px, 3.5vw, 40px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+.section-sub { font-size: 16px; color: rgba(247,248,248,0.5); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+
+/* Pain Cards */
+.pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pain-card { background: #0f1011; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 32px; transition: border-color 0.2s; }
+.pain-card:hover { border-color: rgba(94,106,210,0.3); }
+.pain-icon { width: 40px; height: 40px; background: rgba(94,106,210,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.pain-icon svg { width: 20px; height: 20px; color: #5e6ad2; }
+.pain-card h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+.pain-card p { font-size: 14px; color: rgba(247,248,248,0.5); line-height: 1.7; }
+.pain-data { margin-top: 16px; font-size: 13px; color: #5e6ad2; font-weight: 600; letter-spacing: 0.01em; }
+
+/* Features */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feature-card { background: #0f1011; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 32px; }
+.feature-number { font-size: 13px; font-weight: 700; color: rgba(94,106,210,0.4); letter-spacing: 0.05em; margin-bottom: 16px; }
+.feature-icon { width: 40px; height: 40px; background: rgba(94,106,210,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.feature-icon svg { width: 20px; height: 20px; color: #5e6ad2; }
+.feature-card h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+.feature-card p { font-size: 14px; color: rgba(247,248,248,0.5); line-height: 1.7; margin-bottom: 16px; }
+.feature-practice { background: rgba(94,106,210,0.06); border: 1px solid rgba(94,106,210,0.12); border-radius: 8px; padding: 14px; font-size: 13px; color: rgba(247,248,248,0.55); line-height: 1.6; }
+.feature-practice strong { color: rgba(247,248,248,0.8); font-weight: 600; }
+
+/* How It Works */
+.steps { display: flex; gap: 32px; position: relative; }
+.step { flex: 1; text-align: left; }
+.step-circle { width: 40px; height: 40px; border-radius: 50%; background: #0f1011; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #5e6ad2; margin-bottom: 20px; }
+.step h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+.step p { font-size: 14px; color: rgba(247,248,248,0.5); line-height: 1.7; }
+
+/* Use Cases */
+.usecases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.usecase-card { background: #0f1011; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 28px; transition: border-color 0.2s; }
+.usecase-card:hover { border-color: rgba(94,106,210,0.3); }
+.usecase-card h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+.usecase-card p { font-size: 13px; color: rgba(247,248,248,0.5); line-height: 1.7; }
+
+/* Testimonial */
+.testimonial { text-align: center; max-width: 700px; margin: 0 auto; }
+.testimonial blockquote { font-size: 20px; font-weight: 500; line-height: 1.6; color: rgba(247,248,248,0.85); margin-bottom: 24px; letter-spacing: -0.01em; }
+.testimonial blockquote::before { content: '"'; }
+.testimonial blockquote::after { content: '"'; }
+.testimonial cite { font-style: normal; font-size: 14px; color: rgba(247,248,248,0.4); }
+.testimonial cite strong { color: rgba(247,248,248,0.7); font-weight: 600; }
+
+/* CTA Section */
+.cta-section { text-align: center; background: #0f1011; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.cta-section h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+.cta-section p { font-size: 16px; color: rgba(247,248,248,0.5); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+.waitlist-form { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 440px; margin: 0 auto; }
+.waitlist-form input { flex: 1; min-width: 200px; background: #191a1b; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 14px 16px; font-size: 14px; color: #f7f8f8; outline: none; font-family: inherit; transition: border-color 0.2s; }
+.waitlist-form input:focus { border-color: #5e6ad2; }
+.waitlist-form input::placeholder { color: rgba(247,248,248,0.3); }
+.waitlist-form button { background: #5e6ad2; color: #fff; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 10px; border: none; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+.waitlist-form button:hover { background: #7170ff; }
+.success-message { display: none; font-size: 15px; color: #5e6ad2; font-weight: 600; padding: 14px; }
+
+/* Footer */
+footer { padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: rgba(247,248,248,0.4); transition: color 0.2s; }
+.footer-links a:hover { color: rgba(247,248,248,0.7); }
+.footer-copy { font-size: 13px; color: rgba(247,248,248,0.3); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: flex; }
+  .hero { padding: 120px 0 60px; }
+  .pain-grid, .features-grid { grid-template-columns: 1fr; }
+  .usecases-grid { grid-template-columns: 1fr; }
+  .steps { flex-direction: column; gap: 32px; }
+  .hero-stats { gap: 24px; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Plant<span>IQ</span></a>
+    <div class="nav-links">
+      <a href="#pain">Problem</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#cta" class="nav-cta">Join Waitlist</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').style.display='flex';this.style.display='none'">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>AI-powered operations for<br><span class="accent">small manufacturers</span></h1>
+    <p>PlantIQ brings production monitoring, predictive maintenance, and knowledge capture to your factory floor. No data science team required. See results in hours, not months.</p>
+    <div class="hero-ctas">
+      <a href="#cta" class="btn-primary">Join the Waitlist</a>
+      <a href="#features" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">15%</div>
+        <div class="hero-stat-label">Capacity Recovered</div>
+        <div class="hero-stat-badge">Industry Avg</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">3x</div>
+        <div class="hero-stat-label">Fewer Downtime Events</div>
+        <div class="hero-stat-badge">Early Adopters</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">2 hrs</div>
+        <div class="hero-stat-label">Setup Time</div>
+        <div class="hero-stat-badge">Plug & Play</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pain">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">Small factories lose millions to hidden inefficiencies</h2>
+    <p class="section-sub">While large manufacturers have entire data science teams, small and medium facilities still rely on spreadsheets, tribal knowledge, and reactive maintenance.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Hidden downtime bleeds capacity</h3>
+        <p>Unplanned downtime costs manufacturers an estimated $50 billion annually. Small facilities lack real-time visibility, losing 5-15% of production capacity to issues they never see coming.</p>
+        <div class="pain-data">Small factories lose 5-15% of capacity to undetected downtime</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Knowledge walks out the door</h3>
+        <p>Over 75% of manufacturing knowledge exists only in the heads of senior operators. As the workforce turns over, critical process expertise vanishes with each retirement or departure.</p>
+        <div class="pain-data">75% of manufacturing knowledge is undocumented tribal knowledge</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Spreadsheets can't keep up</h3>
+        <p>Most small manufacturers track production, quality, and maintenance in disconnected spreadsheets or paper logs. No real-time view, no trend analysis, no predictive capability.</p>
+        <div class="pain-data">82% of small manufacturers still rely on spreadsheets for ops</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything you need to run a smarter factory</h2>
+    <p class="section-sub">Purpose-built for small manufacturing teams. No data scientists, no complex setup, no six-month implementation.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-number">01</div>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Real-time Line Monitoring</h3>
+        <p>Plug-and-play sensors connect to your existing equipment. PlantIQ's AI learns normal production patterns and alerts you to anomalies before they become failures.</p>
+        <div class="feature-practice">
+          <strong>In practice:</strong> A small injection molding shop connected 3 sensors to their oldest press. Within a week, PlantIQ detected a vibration pattern that preceded bearing failure by 48 hours -- saving $12,000 in repairs.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-number">02</div>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>Voice-to-SOP Knowledge Capture</h3>
+        <p>Experienced operators speak their workflows into PlantIQ's mobile app. The AI converts spoken instructions into structured, searchable standard operating procedures.</p>
+        <div class="feature-practice">
+          <strong>In practice:</strong> A 40-year veteran toolmaker at a Midwest job shop recorded 87 setup procedures in one afternoon. New operators now find answers in seconds instead of shadowing for months.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-number">03</div>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <h3>Predictive Maintenance Alerts</h3>
+        <p>PlantIQ's machine learning models learn each machine's unique signature. The system forecasts maintenance needs days in advance, scheduling repairs during planned downtime.</p>
+        <div class="feature-practice">
+          <strong>In practice:</strong> A packaging line was throwing random misfeeds every 3-4 days. PlantIQ correlated the pattern with pneumatic pressure drift and scheduled a $200 valve replacement -- eliminating 15 hours of monthly troubleshooting.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Up and running in under 2 hours</h2>
+    <p class="section-sub">No wiring, no data pipeline engineering, no training required.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-circle">1</div>
+        <h3>Connect your equipment</h3>
+        <p>Attach PlantIQ's wireless sensors to your machines. Works with any equipment built after 1990 -- no API integration needed. Most facilities connect 3-5 machines in under an hour.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <h3>AI learns your patterns</h3>
+        <p>PlantIQ's models analyze 72 hours of baseline data to learn normal operating parameters for each machine. The system automatically identifies drift, anomalies, and efficiency patterns.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <h3>Get alerts and insights</h3>
+        <p>Receive maintenance predictions, production summaries, and knowledge capture prompts on your phone or desktop. PlantIQ tells you what needs attention before it becomes a crisis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usecases">
+  <div class="container">
+    <div class="section-label">Use Cases</div>
+    <h2 class="section-title">Built for real factory environments</h2>
+    <p class="section-sub">From precision machining to packaging lines, PlantIQ adapts to your operation.</p>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <h3>Precision Machining Shops</h3>
+        <p>Monitor spindle vibration, coolant temperature, and tool wear across 3-20 CNC machines. Get hour-level notice when a tool is about to fail, preventing scrapped parts.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Injection Molding Facilities</h3>
+        <p>Track barrel temperature stability, clamp pressure, and cycle times. PlantIQ flags deviations that lead to flash, short shots, or material degradation before they produce scrap.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Food & Beverage Packaging</h3>
+        <p>Monitor conveyor speed, seal temperature, and fill accuracy across packaging lines. Receive alerts when drift threatens to produce out-of-spec packages.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Electronics Assembly</h3>
+        <p>Track solder reflow profiles, pick-and-place accuracy, and environmental conditions. Capture setup procedures from senior technicians before they retire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="testimonial">
+      <blockquote>We installed PlantIQ on a Friday afternoon. By Monday morning, it had already flagged a compressor issue we would not have caught for weeks. This is the first time AI has actually made sense for our shop floor.</blockquote>
+      <cite>&mdash; <strong>Marcus Chen</strong>, Production Manager at Atlas Precision Manufacturing</cite>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="cta-section">
+  <div class="container">
+    <h2>Ready to make every line smarter?</h2>
+    <p>Join the waitlist. Early access members get priority setup and a 30-day free trial.</p>
+    <div class="waitlist-form">
+      <input type="email" id="email-input" placeholder="Enter your work email" required>
+      <button onclick="submitWaitlist()">Join the Waitlist</button>
+    </div>
+    <div id="success-msg" class="success-message">You're on the list. We'll be in touch within 48 hours.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 PlantIQ. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitWaitlist() {
+  var input = document.getElementById('email-input');
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    input.style.borderColor = '#e5484d';
+    return;
+  }
+  var slug = 'plantiq';
+  var existing = JSON.parse(localStorage.getItem(slug + '_waitlist_emails') || '[]');
+  existing.push({ email: email, timestamp: new Date().toISOString(), page: slug });
+  localStorage.setItem(slug + '_waitlist_emails', JSON.stringify(existing));
+  document.querySelector('.waitlist-form').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+  fetch('http://localhost:9090/api/waitlist/' + slug, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+}
+</script>
+
+<img src="http://localhost:9090/track/plantiq.gif" width="1" height="1" alt="" />
+</body>
+</html>
