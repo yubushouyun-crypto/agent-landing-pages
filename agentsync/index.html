@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentSync - Know what your AI agents are doing | AI Workforce Productivity</title>
+  <meta name="description" content="AgentSync gives engineering leaders a unified view of human and AI agent productivity. Track completion rates, error rework, and team output across your entire workforce.">
+  <meta property="og:title" content="AgentSync - Know what your AI agents are doing">
+  <meta property="og:description" content="Track, measure and manage AI agent productivity alongside your human team. One dashboard for your entire workforce.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yubushouyun-crypto.github.io/agent-landing-pages/agentsync/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AgentSync - Know what your AI agents are doing">
+  <meta name="twitter:description" content="Track, measure and manage AI agent productivity alongside your human team.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #08090a;
+      color: #f7f8f8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      background: rgba(8, 9, 10, 0.8);
+      border-bottom: 1px solid rgba(247, 248, 248, 0.06);
+      padding: 16px 0;
+    }
+    nav .container { display: flex; align-items: center; justify-content: space-between; }
+    nav .logo { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #f7f8f8; }
+    nav .logo span { color: #5e6ad2; }
+    nav .links { display: flex; align-items: center; gap: 28px; }
+    nav .links a { color: rgba(247, 248, 248, 0.6); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; letter-spacing: 0.01em; }
+    nav .links a:hover { color: #f7f8f8; }
+    .btn-ghost-nav {
+      background: transparent; border: 1px solid rgba(247, 248, 248, 0.15);
+      color: #f7f8f8; padding: 8px 20px; border-radius: 8px;
+      font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-ghost-nav:hover { border-color: #5e6ad2; background: rgba(94, 106, 210, 0.08); }
+
+    /* Sections */
+    section { padding: 100px 0; }
+
+    /* Hero */
+    .hero { padding-top: 160px; text-align: center; }
+    .hero h1 {
+      font-size: 56px; font-weight: 600; line-height: 1.1;
+      letter-spacing: -0.03em; max-width: 800px; margin: 0 auto 20px;
+    }
+    .hero h1 .accent { background: linear-gradient(135deg, #5e6ad2, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p {
+      font-size: 18px; color: rgba(247, 248, 248, 0.55);
+      max-width: 640px; margin: 0 auto 40px; letter-spacing: 0.01em;
+    }
+    .hero-cta { display: flex; gap: 16px; justify-content: center; margin-bottom: 64px; }
+    .btn-primary {
+      background: #5e6ad2; color: #fff; border: none; padding: 14px 32px;
+      border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: background 0.2s; letter-spacing: 0.01em;
+    }
+    .btn-primary:hover { background: #7170ff; }
+    .btn-ghost {
+      background: transparent; border: 1px solid rgba(247, 248, 248, 0.12);
+      color: rgba(247, 248, 248, 0.8); padding: 14px 32px; border-radius: 8px;
+      font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-ghost:hover { border-color: rgba(247, 248, 248, 0.3); color: #f7f8f8; }
+    .hero-stats {
+      display: flex; gap: 48px; justify-content: center;
+      padding: 32px 0; border-top: 1px solid rgba(247, 248, 248, 0.06);
+      max-width: 700px; margin: 0 auto;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 28px; font-weight: 600; color: #5e6ad2; letter-spacing: -0.02em; }
+    .hero-stat .label { font-size: 13px; color: rgba(247, 248, 248, 0.45); margin-top: 4px; letter-spacing: 0.02em; }
+
+    /* Section headers */
+    h2 {
+      font-size: 36px; font-weight: 600; letter-spacing: -0.02em;
+      margin-bottom: 16px; text-align: center;
+    }
+    .subtitle {
+      font-size: 16px; color: rgba(247, 248, 248, 0.5);
+      max-width: 560px; margin: 0 auto 56px; text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    /* Pain Cards */
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pain-card {
+      background: #0f1011; border: 1px solid rgba(247, 248, 248, 0.06);
+      border-radius: 12px; padding: 32px 28px;
+    }
+    .pain-card .icon { font-size: 24px; margin-bottom: 16px; color: #5e6ad2; }
+    .pain-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .pain-card p { font-size: 14px; color: rgba(247, 248, 248, 0.55); line-height: 1.65; }
+    .pain-card .stat {
+      margin-top: 14px; font-size: 12px; color: #5e6ad2; font-weight: 600;
+      letter-spacing: 0.02em; text-transform: uppercase;
+    }
+
+    /* Features */
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-card {
+      background: #0f1011; border: 1px solid rgba(247, 248, 248, 0.06);
+      border-radius: 12px; padding: 32px 28px;
+    }
+    .feature-card .num { font-size: 12px; color: #5e6ad2; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 12px; }
+    .feature-card .icon { font-size: 22px; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .feature-card > p { font-size: 14px; color: rgba(247, 248, 248, 0.55); line-height: 1.65; }
+    .practice-box {
+      margin-top: 16px; background: #191a1b; border-radius: 8px; padding: 14px 16px;
+      border-left: 2px solid #5e6ad2;
+    }
+    .practice-box p { font-size: 13px; color: rgba(247, 248, 248, 0.6); }
+    .practice-box strong { color: #f7f8f8; }
+
+    /* How It Works */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .step { text-align: center; }
+    .step .circle {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(94, 106, 210, 0.12); border: 1px solid rgba(94, 106, 210, 0.25);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; font-size: 18px; font-weight: 700; color: #5e6ad2;
+    }
+    .step h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .step p { font-size: 14px; color: rgba(247, 248, 248, 0.55); max-width: 300px; margin: 0 auto; }
+
+    /* Use Cases */
+    .usecases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .usecase-card {
+      background: #0f1011; border: 1px solid rgba(247, 248, 248, 0.06);
+      border-radius: 12px; padding: 28px;
+    }
+    .usecase-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .usecase-card p { font-size: 14px; color: rgba(247, 248, 248, 0.5); }
+
+    /* Testimonial */
+    .testimonial {
+      background: #0f1011; border: 1px solid rgba(247, 248, 248, 0.06);
+      border-radius: 12px; padding: 48px; text-align: center; max-width: 800px; margin: 0 auto;
+    }
+    .testimonial blockquote {
+      font-size: 20px; line-height: 1.5; color: rgba(247, 248, 248, 0.85);
+      font-weight: 500; letter-spacing: -0.01em;
+    }
+    .testimonial cite {
+      display: block; margin-top: 20px; font-style: normal;
+      font-size: 14px; color: rgba(247, 248, 248, 0.45);
+    }
+    .testimonial cite span { color: #5e6ad2; }
+
+    /* CTA */
+    .cta-section { text-align: center; border-top: 1px solid rgba(247, 248, 248, 0.06); padding-top: 80px; }
+    .cta-section h2 { margin-bottom: 12px; }
+    .cta-section .subtitle { margin-bottom: 36px; }
+    .waitlist-form { display: flex; gap: 12px; justify-content: center; max-width: 480px; margin: 0 auto; }
+    .waitlist-form input {
+      flex: 1; padding: 14px 18px; border-radius: 8px; border: 1px solid rgba(247, 248, 248, 0.12);
+      background: #0f1011; color: #f7f8f8; font-size: 14px; outline: none;
+      transition: border-color 0.2s; font-family: inherit;
+    }
+    .waitlist-form input:focus { border-color: #5e6ad2; }
+    .waitlist-form input::placeholder { color: rgba(247, 248, 248, 0.3); }
+    .waitlist-form button { flex-shrink: 0; }
+    .success-msg {
+      display: none; color: #5e6ad2; font-size: 15px; font-weight: 600;
+      margin-top: 16px; letter-spacing: 0.01em;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(247, 248, 248, 0.06);
+      padding: 40px 0;
+    }
+    footer .container { display: flex; justify-content: space-between; align-items: center; }
+    footer .copy { font-size: 13px; color: rgba(247, 248, 248, 0.35); }
+    footer .links { display: flex; gap: 24px; }
+    footer .links a { font-size: 13px; color: rgba(247, 248, 248, 0.35); text-decoration: none; transition: color 0.2s; }
+    footer .links a:hover { color: rgba(247, 248, 248, 0.7); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .pain-grid, .features-grid, .steps { grid-template-columns: 1fr; }
+      .usecases-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .waitlist-form { flex-direction: column; }
+      nav .links a { display: none; }
+      nav .links .btn-ghost-nav { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Agent<span>Sync</span></div>
+    <div class="links">
+      <a href="#pain">Problem</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#usecases">Use Cases</a>
+      <button class="btn-ghost-nav" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Join Waitlist</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Know what your <span class="accent">AI agents</span> are doing</h1>
+    <p>Your team now includes AI agents. Track their productivity, catch rework patterns, and manage your entire workforce — human and machine — from one dashboard.</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Join Waitlist</button>
+      <button class="btn-ghost" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See Features</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">8.7B</div>
+        <div class="label">Big Tech AI acquisitions in 2025</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">67%</div>
+        <div class="label">Of teams deploy AI agents without tracking</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">3.2x</div>
+        <div class="label">More logic defects in AI-generated code</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pain">
+  <div class="container">
+    <h2>Your AI workforce has no dashboard</h2>
+    <p class="subtitle">Engineering leaders are deploying AI agents at scale without basic management tooling. The result is invisible rework, unmeasured output, and growing operational risk.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>No visibility into agent output</h3>
+        <p>When AI agents operate in the background, nobody tracks their completion rate, error rate, or time spent per task. Rework cycles go unnoticed until they compound into delivery delays.</p>
+        <div class="stat">67% of teams lack agent productivity tracking</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+        </div>
+        <h3>Human-agent handoff friction</h3>
+        <p>Agents complete tasks but leave results in silos. Engineers waste time reviewing, reformatting, and redoing work that should flow directly into their workflow. The handoff is the bottleneck.</p>
+        <div class="stat">3.2x more rework with unmanaged agent output</div>
+      </div>
+      <div class="pain-card">
+        <div class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        </div>
+        <h3>No unified workforce metrics</h3>
+        <p>You track sprint velocity for humans. You track token usage for agents. But there is no single view that answers: who or what is doing the work, how fast, and how reliably?</p>
+        <div class="stat">0 dedicated tools exist for agent workforce management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <h2>Built for the hybrid workforce</h2>
+    <p class="subtitle">Measure what matters across human and AI contributors. Stop guessing, start managing.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="num">01</div>
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg>
+        </div>
+        <h3>Unified Productivity Dashboard</h3>
+        <p>See human sprint velocity and agent task completion side by side. Track throughput, error rates, and cycle time across your entire workforce in real time.</p>
+        <div class="practice-box">
+          <p><strong>In practice:</strong> A VP Engineering at a 50-person startup sees that their 4 coding agents completed 120 PRs this week, with a 14% rework rate. They reassign one agent to testing, cutting rework to 6%.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="num">02</div>
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Agent Rework Intelligence</h3>
+        <p>Detect when agents produce outputs that require human correction. Track rework patterns by agent, task type, and codebase area to identify where agents consistently struggle.</p>
+        <div class="practice-box">
+          <p><strong>In practice:</strong> The dashboard flags that Agent Alpha produces 3x more rework on database migrations than on API endpoints. The team gives it a curated migration spec template, dropping rework by 60%.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="num">03</div>
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5e6ad2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Workflow Handoff Manager</h3>
+        <p>Define agent-to-human handoff rules so completed agent tasks automatically route to the right engineer for review, with context attached. No more hunting for agent output.</p>
+        <div class="practice-box">
+          <p><strong>In practice:</strong> A code review agent finishes its scan. The handoff manager tags the right senior engineer, attaches the agent's findings, and adds it to their review queue — all in under 2 seconds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <h2>How It Works</h2>
+    <p class="subtitle">Get unified workforce visibility in three steps. No changes to your existing agent setup.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="circle">1</div>
+        <h3>Connect your agents</h3>
+        <p>Install one SDK or API integration. Works with any agent framework — Claude Code, Cursor, Codex, or custom agents.</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <h3>Agent sync activates</h3>
+        <p>AgentSync automatically captures task starts, completions, errors, rework events, and handoff actions from every connected agent.</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <h3>See your full workforce</h3>
+        <p>Open the dashboard to see human and agent productivity side by side. Filter by team, agent, project, or time period. Export reports for your standup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usecases">
+  <div class="container">
+    <h2>Who uses AgentSync</h2>
+    <p class="subtitle">From startup founders to enterprise engineering leads, teams use AgentSync to manage their hybrid workforce.</p>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <h3>Engineering Manager at a 40-person startup</h3>
+        <p>Deployed 3 coding agents. Uses AgentSync to balance workload between human developers and agents, ensuring no agent bottleneck stalls the sprint.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>VP Engineering at a mid-market SaaS company</h3>
+        <p>Has 8 agents running across frontend, backend, and testing. Uses the rework intelligence feature to identify which agents need better specs and which tasks are safe to automate fully.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>AI Team Lead at an enterprise</h3>
+        <p>Manages 12 custom agents. Uses the handoff manager to route outputs to 4 human reviewers. Cut review cycle time by 40% in the first week.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Indie founder building solo with AI agents</h3>
+        <p>Runs 5 agents for coding, design, and content. Uses AgentSync to track what each agent actually ships and catch quality issues before they hit production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="testimonial">
+      <blockquote>We were running 7 AI agents blind. AgentSync showed us that one agent was responsible for 43% of our code rework. We fixed its prompt template and saved 20 engineering hours per week.</blockquote>
+      <cite>— CTO at a 30-person B2B SaaS startup <span>| AgentSync beta user</span></cite>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="cta-section">
+  <div class="container">
+    <h2>Get early access</h2>
+    <p class="subtitle">Join the waitlist. We launch Q1 2026. No spam, just launch announcements and early-bird pricing.</p>
+    <div class="waitlist-form" id="waitlist-form">
+      <input type="email" id="email-input" placeholder="Enter your work email" required>
+      <button class="btn-primary" onclick="submitWaitlist()">Join Waitlist</button>
+    </div>
+    <div class="success-msg" id="success-msg">You are on the list. We will be in touch when we launch.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="copy">2026 AgentSync. All rights reserved.</div>
+    <div class="links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var slug = 'agentsync';
+
+function submitWaitlist() {
+  var input = document.getElementById('email-input');
+  var email = input.value.trim();
+  if (!email) return;
+
+  var key = slug + '_waitlist_emails';
+  var existing = JSON.parse(localStorage.getItem(key) || '[]');
+  existing.push({ email: email, timestamp: new Date().toISOString(), page: slug });
+  localStorage.setItem(key, JSON.stringify(existing));
+
+  fetch('http://localhost:9090/api/waitlist/' + slug, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  }).catch(function() {});
+
+  document.getElementById('waitlist-form').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+}
+</script>
+
+<img src="http://localhost:9090/track/agentsync.gif" width="1" height="1" alt="" />
+</body>
+</html>
